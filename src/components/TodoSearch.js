@@ -1,7 +1,8 @@
 import React from "react";
+import '../styles/TodoSearch.css';
 
 function TodoSearch() {
-    return(
+    return (
         <input placeholder="Onion" />
     );
 }
