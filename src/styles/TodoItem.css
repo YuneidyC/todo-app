@@ -1,0 +1,88 @@
+.TodoItem {
+    background-color: #FAFAFA;
+    position: relative;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+}
+
+.TodoItem-p {
+    margin-left: 24px;
+    font-size: 1rem;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.TodoItem-p--completed {
+    text-decoration: line-through;
+}
+
+.Icon--image {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.checklist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checklist .input--check {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checklist:hover .input--check~.checkmark {
+    background-color: #ccc;
+}
+
+.checklist .input--check:checked~.checkmark {
+    background-color: plum;
+}
+
+.checkmark {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.checkmark:hover {
+    cursor: pointer;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checklist input:checked~.checkmark:after {
+    display: block;
+}
+
+.checklist .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 17.5px;
+    height: 17.5px;
+    border-radius: 50%;
+    background: white;
+}
+
+
