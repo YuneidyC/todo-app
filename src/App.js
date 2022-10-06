@@ -6,14 +6,40 @@ import { TodoList } from './components/TodoList';
 import { TodoItem } from './components/TodoItem';
 import { CreateTodoButton } from './components/CreateTodoButton';
 
-const defaultTodos = [
-    { text: 'Cut onion', completed: true },
-    { text: 'Clean up kitchen', completed: true },
-    { text: 'Make bathroom', completed: false }
-];
+// const defaultTodos = [
+//     { text: 'Cut onion', completed: true },
+//     { text: 'Clean up kitchen', completed: true },
+//     { text: 'Make bathroom', completed: false }
+// ];
+
+function useLocalStorage(itemName, initialValue) {
+    const localStorageItem = localStorage.getItem(itemName);
+    let parseItem;
+
+    if (!localStorageItem) {
+        localStorage.setItem(itemName, JSON.stringify(initialValue));
+        parseItem = initialValue;
+    } else {
+        parseItem = JSON.parse(localStorageItem);
+    }
+
+    const [item, setItem] = React.useState(parseItem);
+
+    const saveItem = (newItem) => {
+        const stringifyItem = JSON.stringify(newItem);
+        localStorage.setItem(itemName, stringifyItem);
+        setItem(newItem);
+    }
+
+    return [
+        item,
+        saveItem
+    ];
+}
 
 function App() {
-    const [todos, setTodos] = React.useState(defaultTodos);
+    const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
+
     const [searchValue, setSearchValue] = React.useState('');
 
     const completedTodos = todos.filter(todo => todo.completed).length;
@@ -31,6 +57,20 @@ function App() {
         })
     }
 
+    const completeTodo = (text) => {
+        const todoIndex = todos.findIndex(todo => todo.text === text);
+        const newTodos = [...todos];
+        newTodos[todoIndex].completed = true;
+        saveTodos(newTodos);
+    }
+
+    const deleteTodo = (text) => {
+        const todoIndex = todos.findIndex(todo => todo.text === text);
+        const newTodos = [...todos];
+        newTodos.splice(todoIndex, 1);
+        saveTodos(newTodos);
+    }
+
     return (
         <React.Fragment>
             <TodoCounter
@@ -42,8 +82,14 @@ function App() {
                 setSearchValue={setSearchValue}
             />
             <TodoList>
-                {todos.map(todo => (
-                    <TodoItem key={todo.text} text={todo.text} />
+                {searchedTodos.map(todo => (
+                    <TodoItem
+                        key={todo.text}
+                        text={todo.text}
+                        completed={todo.completed}
+                        onComplete={() => completeTodo(todo.text)}
+                        onDelete={() => deleteTodo(todo.text)}
+                    />
                 ))}
             </TodoList>
             <CreateTodoButton />
