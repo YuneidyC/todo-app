@@ -2,4 +2,11 @@
     margin: 0;
     padding-bottom: 56px;
     list-style: none;
+    width: 100%;
+}
+
+.TodoList-list__items {
+    padding-left: 0;
+    width: 100%;
+    min-width: 320px;
 }
