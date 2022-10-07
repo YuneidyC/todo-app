@@ -27,7 +27,11 @@ function App() {
             <TodoSearch />
             <TodoList>
                 {error && <p>Error</p>}
-                {loading && <p>Loading...</p>}
+                {loading &&
+                    <div className='ring-loading'>
+                        Loading...
+                        <span className='ring-loading__span'></span>
+                    </div>}
                 {(!loading && !searchedTodos.length) && <p>Create your first TODO!</p>}
 
                 {searchedTodos.map(todo => (
