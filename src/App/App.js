@@ -6,6 +6,7 @@ import { TodoList } from '../components/TodoList';
 import { TodoItem } from '../components/TodoItem';
 import { CreateTodoButton } from '../components/CreateTodoButton';
 import { TodoContext } from '../TodoContext';
+import { Modal } from '../components/Modal';
 
 
 function App() {
@@ -15,25 +16,14 @@ function App() {
         searchedTodos,
         completeTodo,
         deleteTodo,
+        openModal,
+        setOpenModal
     } = React.useContext(TodoContext);
+
     return (
         <React.Fragment>
-            <TodoCounter
-            // total={totalTodos}
-            // completed={completedTodos}
-            />
-            <TodoSearch
-            // searchValue={searchValue}
-            // setSearchValue={setSearchValue}
-            />
-            {/* <TodoContext.Consumer>
-                    {({
-                        error,
-                        loading,
-                        searchedTodos,
-                        completeTodo,
-                        deleteTodo,
-                    }) => ( */}
+            <TodoCounter />
+            <TodoSearch />
             <TodoList>
                 {error && <p>Error</p>}
                 {loading && <p>Loading...</p>}
@@ -49,9 +39,17 @@ function App() {
                     />
                 ))}
             </TodoList>
-            {/* )}
-                </TodoContext.Consumer> */}
-            <CreateTodoButton />
+
+            {openModal && (
+                <Modal>
+                    <p>{searchedTodos.length > 0 && searchedTodos[0].text}</p>
+                </Modal>
+            )}
+
+            <CreateTodoButton
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+            />
         </React.Fragment>
     );
 }
