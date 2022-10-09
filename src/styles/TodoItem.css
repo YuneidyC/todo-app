@@ -35,64 +35,69 @@ li {
 }
 
 .checklist {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    justify-self: center;
+    align-self: center;
     cursor: pointer;
     font-size: 22px;
+    position: relative;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 
-.checklist .input--check {
-    position: absolute;
-    opacity: 0;
+.TodoItem--completed {
+    background-color: #dddada;
+}
+
+li svg {
+    justify-self: center;
+    align-self: center;
     cursor: pointer;
 }
 
-.checklist:hover .input--check~.checkmark {
-    background-color: #ccc;
-}
-
-.checklist .input-check--active~.checkmark {
-    background-color: plum;
-    opacity: 0.5;
-}
-
-.checkmark {
+.checklist label {
     position: absolute;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-}
-
-.checkmark:hover {
+    width: 15px;
+    height: 15px;
+    border: 2px solid darkgray;
+    border-radius: 100%;
+    top: 10%;
+    left: 10%;
+    color: darkgray;
+    user-select: none;
+    grid-column: 1 / 2;
     cursor: pointer;
+
+    transform: translate(-50%, -50%);
+    transition: all ease-out 200ms;
 }
 
-.checkmark:after {
+.checklist .checklist--check:after {
     content: "";
     position: absolute;
+    width: 0px;
+    height: 0px;
+    border-bottom: 2px solid plum;
+    border-left: 2px solid plum;
+    top: 25%;
+    left: 50%;
+    transform-origin: bottom left;
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: all ease-out 200ms;
+}
+
+.checklist .checklist--check {
+    border: 2px solid plum;
+}
+
+.checklist .checklist--check:after {
+    opacity: 1;
+    width: 18px;
+    height: 6px;
+}
+
+.checklist-input {
     display: none;
-}
-
-.checklist .input-check--active~.checkmark:after {
-    display: block;
-}
-
-.checklist .checkmark:after {
-    top: 4px;
-    left: 4px;
-    width: 17.5px;
-    height: 17.5px;
-    border-radius: 50%;
-    background: white;
-}
-
-.TodoItem--completed {
-    background-color: lightgray;
 }
