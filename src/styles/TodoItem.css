@@ -1,4 +1,4 @@
-.TodoItem {
+li {
     background-color: #FAFAFA;
     position: relative;
     display: grid;
@@ -9,14 +9,18 @@
     margin-top: 24px;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
     border-radius: 30px;
+}
 
+.checklist--check {
+    background-color: lightgray;
 }
 
 .TodoItem-p {
-    margin-left: 24px;
     font-size: 1rem;
     line-height: 30px;
     font-weight: 400;
+    overflow-x: scroll;
+    text-overflow: ellipsis;
 }
 
 .TodoItem-p--completed {

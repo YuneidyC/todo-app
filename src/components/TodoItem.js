@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useId } from "react";
 import '../styles/TodoItem.css';
-
+import { BsFillTrashFill } from 'react-icons/bs';
 
 function TodoItem(props) {
+    const trashIcon = { color: 'plum', fontSize: '20px' };
+    const id = useId();
+
     return (
-        <li className={`TodoItem ${props.completed && 'TodoItem--completed'}`}>
-            <label className="checklist">
-                <input type="checkbox" name="radio" className={`input--check ${props.completed && 'input-check--active'}`} />
-                <span className={`checkmark  ${props.completed && 'span-check--active'}`} onClick={props.onComplete}></span>
-            </label>
+        <li className={`${props.completed && 'checklist--check'}`}>
+            <div className="checklist">
+                <input type="checkbox" id={id} className={`checklist-input ${props.completed && 'checklist--check'}`} />
+                <label htmlFor={id} className={`${props.completed && 'checklist--check'}`} onClick={props.onComplete}></label>
+            </div>
             <p className={`TodoItem-p ${props.completed && 'TodoItem-p--completed'}`}>{props.text}</p>
-            <img className="Icon--image" src="https://img.icons8.com/cute-clipart/64/000000/delete.png" alt="trash" onClick={props.onDelete} />
+            <BsFillTrashFill style={trashIcon} onClick={props.onDelete} />
         </li>
     )
 }
