@@ -22,7 +22,7 @@ function TodoForm() {
         event.preventDefault();
         addTodo(newTodoValue);
         setOpenModal(false);
-        setNewTodoValue('')
+        setNewTodoValue('');
     };
 
     return (
