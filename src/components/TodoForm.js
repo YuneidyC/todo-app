@@ -15,12 +15,25 @@ function TodoForm() {
     };
 
     const onCancel = () => {
+        changeRotateButton();
         setOpenModal(false);
+    }
+
+    const changeRotateButton = () => {
+        const spanButton = document.getElementsByClassName('CreateTodoButton--button__span')[0];
+        spanButton.style.transform = 'rotate(0deg)';
+        spanButton.addEventListener('mouseover', event => {
+            spanButton.style.transform = 'rotate(90deg)';
+        });
+        spanButton.addEventListener('mouseout', event => {
+            spanButton.style.transform = 'rotate(0deg)';
+        });
     }
 
     const onSubmit = (event) => {
         event.preventDefault();
         addTodo(newTodoValue);
+        changeRotateButton();
         setOpenModal(false);
         setNewTodoValue('');
     };
