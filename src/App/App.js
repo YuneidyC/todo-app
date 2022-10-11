@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 import React from 'react';
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';
@@ -8,7 +8,6 @@ import { TodoForm } from '../components/TodoForm';
 import { CreateTodoButton } from '../components/CreateTodoButton';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../components/Modal';
-
 
 function App() {
     const {
@@ -34,9 +33,9 @@ function App() {
                     </div>}
                 {(!loading && !searchedTodos.length) && <p>Create your first TODO!</p>}
 
-                {searchedTodos.map(todo => (
+                {searchedTodos.map((todo, index) => (
                     <TodoItem
-                        key={todo.text}
+                        key={index}
                         text={todo.text}
                         completed={todo.completed}
                         onComplete={() => completeTodo(todo.text)}
