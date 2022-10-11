@@ -1,0 +1,18 @@
+.TodoHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.TodoHeader--p {
+    padding-top: 50px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00a0b7, #ffdd9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

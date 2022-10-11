@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';
+import { TodoHeader } from '../components/TodoHeader';
 import { TodoList } from '../components/TodoList';
 import { TodoItem } from '../components/TodoItem';
 import { TodoForm } from '../components/TodoForm';
@@ -22,6 +23,7 @@ function App() {
 
     return (
         <React.Fragment>
+            <TodoHeader />
             <TodoCounter />
             <TodoSearch />
             <TodoList>
