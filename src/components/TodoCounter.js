@@ -4,10 +4,20 @@ import '../styles/TodoCounter.css';
 
 function TodoCounter() {
     const { totalTodos, completedTodos } = React.useContext(TodoContext);
+
+    function calculatePercentage() {
+        if (totalTodos === 0) {
+            return totalTodos.toFixed(2);
+        }
+        return ((completedTodos / totalTodos) * 100).toFixed(2);
+    }
+
     return (
-        <h2 className="TodoCounter">
-            You have completed {completedTodos} out of {totalTodos} TODO's.
-        </h2>
+        <div className="TodoCounter">
+            <span className="TodoCounter--percentage">{calculatePercentage()}%</span>
+            <progress className="TodoCounter--progressBar" value={calculatePercentage()} max="100">
+            </progress>
+        </div>
     );
 }
 

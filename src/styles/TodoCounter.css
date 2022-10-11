@@ -5,4 +5,30 @@
     margin: 0;
     padding: 48px;
     min-width: 200px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.TodoCounter--percentage {
+    position: absolute;
+    height: 12px;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    width: 65%;
+}
+
+progress::-moz-progress-bar, progress::-webkit-progress-value {
+    background-color: #4CAF50;
+    border-radius: 30px;
+}
+
+.TodoCounter--progressBar {
+    height: 15px;
+    width: 80%;
+    min-width: 200px;
+    background: darkgray;
+    border-radius: 30px;
 }
