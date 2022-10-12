@@ -3,7 +3,7 @@ import '../styles/TodoItem.css';
 import { BsFillTrashFill } from 'react-icons/bs';
 
 function TodoItem(props) {
-    const trashIcon = { color: 'plum', fontSize: '20px' };
+    const trashIcon = { color: '#29aab3', fontSize: '20px' };
     const id = useId();
 
     return (
