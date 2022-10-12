@@ -1,14 +1,14 @@
 .CreateTodoButton {
-    background-color: #29aab3;
+    background-color: #FFDD9C;
     border-radius: 50%;
     position: fixed;
-    bottom: 50px;
+    bottom: 30px;
     height: 80px;
     width: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    right: 50px;
+    right: 30px;
     z-index: 1;
 }
 
@@ -16,12 +16,15 @@
     background-color: transparent;
     border: none;
     position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .CreateTodoButton--button .CreateTodoButton--button__span {
     font-weight: bold;
-    color: #FAFAFA;
-    width: 40px;
+    color: darkgray;
+    width: 100%;
     height: 40px;
     cursor: pointer;
     font-size: 2rem;
