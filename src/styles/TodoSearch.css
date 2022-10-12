@@ -13,18 +13,15 @@
 .TodoSearch-input {
     width: 90%;
     font-size: 18px;
-    font-family: 'Montserrat';
     font-weight: 400;
     border: none;
     padding-left: 20px;
     border-radius: 30px;
     outline: none;
-    text-align: center;
 }
 
 .TodoSearch-input::placeholder {
     color: #A5A5A5;
-    font-family: 'Montserrat';
     font-weight: 400;
 }
 
