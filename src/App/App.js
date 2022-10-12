@@ -27,23 +27,25 @@ function App() {
             <TodoCounter />
             <TodoSearch />
             <TodoList>
-                {error && <p>Error</p>}
-                {loading &&
-                    <div className='ring-loading'>
-                        Loading...
-                        <span className='ring-loading__span'></span>
-                    </div>}
-                {(!loading && !searchedTodos.length) && <p>Create your first TODO!</p>}
+                <div className='TodoList--container'>
+                    {error && <p>Error</p>}
+                    {loading &&
+                        <div className='ring-loading'>
+                            Loading...
+                            <span className='ring-loading__span'></span>
+                        </div>}
+                    {(!loading && !searchedTodos.length) && <p>Create your first TODO!</p>}
 
-                {searchedTodos.map((todo, index) => (
-                    <TodoItem
-                        key={index}
-                        text={todo.text}
-                        completed={todo.completed}
-                        onComplete={() => completeTodo(todo.text)}
-                        onDelete={() => deleteTodo(todo.text)}
-                    />
-                ))}
+                    {searchedTodos.map((todo, index) => (
+                        <TodoItem
+                            key={index}
+                            text={todo.text}
+                            completed={todo.completed}
+                            onComplete={() => completeTodo(todo.text)}
+                            onDelete={() => deleteTodo(todo.text)}
+                        />
+                    ))}
+                </div>
             </TodoList>
 
             {openModal && (
