@@ -25,6 +25,15 @@ li:last-child {
     font-weight: 400;
     overflow-x: scroll;
     text-overflow: ellipsis;
+    margin: 10px;
+}
+
+.TodoItem-p::-webkit-scrollbar {
+    display: none;
+}
+
+.TodoItem-p {
+    scrollbar-width: none;
 }
 
 .TodoItem-p--completed {
