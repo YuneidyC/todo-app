@@ -9,10 +9,8 @@ import { TodoList } from '../components/TodoList';
 import { TodoItem } from '../components/TodoItem';
 import { TodoContext } from '../TodoContext';
 import { TodoHeaderLeft } from '../components/TodoHeaderLeft';
-import { TodoInputLeft } from '../components/TodoInputLeft';
-import { TodoButtonLeft } from "../components/TodoButtonLeft";
 import { TodoImageLeft } from "../components/TodoImageLeft";
-
+import { TodoFieldLeft } from "../components/TodoFieldLeft";
 
 function Desktop() {
     const {
@@ -29,8 +27,7 @@ function Desktop() {
                 <section className="section--left">
                     <div className="section--left-container">
                         <TodoHeaderLeft />
-                        <TodoInputLeft />
-                        <TodoButtonLeft />
+                        <TodoFieldLeft />
                         <TodoImageLeft />
                     </div>
                 </section>
