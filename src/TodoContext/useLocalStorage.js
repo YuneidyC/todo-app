@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function useLocalStorage(itemName, initialValue) {
     const [loading, setLoading] = React.useState(true);
@@ -12,7 +12,10 @@ function useLocalStorage(itemName, initialValue) {
                 let parseItem;
 
                 if (!localStorageItem) {
-                    localStorage.setItem(itemName, JSON.stringify(initialValue));
+                    localStorage.setItem(
+                        itemName,
+                        JSON.stringify(initialValue)
+                    );
                     parseItem = initialValue;
                 } else {
                     parseItem = JSON.parse(localStorageItem);

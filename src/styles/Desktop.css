@@ -9,7 +9,8 @@ main {
     position: relative;
 }
 
-.section--left, .section--right {
+.section--left,
+.section--right {
     width: 100%;
     height: auto;
     min-width: 400px;

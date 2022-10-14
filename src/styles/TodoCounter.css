@@ -21,8 +21,9 @@
     font-weight: 500;
 }
 
-progress::-moz-progress-bar, progress::-webkit-progress-value {
-    background-color: #4CAF50;
+progress::-moz-progress-bar,
+progress::-webkit-progress-value {
+    background-color: #4caf50;
     border-radius: 30px;
     height: 18px;
     border: none;

@@ -1,5 +1,5 @@
 .CreateTodoButton {
-    background-color: #FFDD9C;
+    background-color: #ffdd9c;
     border-radius: 50%;
     position: fixed;
     bottom: 30px;
@@ -32,7 +32,7 @@
 
     transform: rotate(0);
     transform-origin: center center;
-    transition: .15s ease;
+    transition: 0.15s ease;
 }
 
 .CreateTodoButton--button .CreateTodoButton--button__span:hover {

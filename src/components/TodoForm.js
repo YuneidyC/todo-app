@@ -1,14 +1,11 @@
-import React from "react";
-import { TodoContext } from "../TodoContext";
+import React from 'react';
+import { TodoContext } from '../TodoContext';
 import '../styles/TodoForm.css';
 
 function TodoForm() {
     const [newTodoValue, setNewTodoValue] = React.useState('');
 
-    const {
-        addTodo,
-        setOpenModal,
-    } = React.useContext(TodoContext);
+    const { addTodo, setOpenModal } = React.useContext(TodoContext);
 
     const onChange = (event) => {
         setNewTodoValue(event.target.value);
@@ -17,18 +14,20 @@ function TodoForm() {
     const onCancel = () => {
         changeRotateButton();
         setOpenModal(false);
-    }
+    };
 
     const changeRotateButton = () => {
-        const spanButton = document.getElementsByClassName('CreateTodoButton--button__span')[0];
+        const spanButton = document.getElementsByClassName(
+            'CreateTodoButton--button__span'
+        )[0];
         spanButton.style.transform = 'rotate(0deg)';
-        spanButton.addEventListener('mouseover', event => {
+        spanButton.addEventListener('mouseover', (event) => {
             spanButton.style.transform = 'rotate(90deg)';
         });
-        spanButton.addEventListener('mouseout', event => {
+        spanButton.addEventListener('mouseout', (event) => {
             spanButton.style.transform = 'rotate(0deg)';
         });
-    }
+    };
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -50,14 +49,12 @@ function TodoForm() {
                 <button
                     type="button"
                     className="TodoForm-button TodoForm-button--cancel"
-                    onClick={onCancel}
-                >
+                    onClick={onCancel}>
                     Cancel
                 </button>
                 <button
                     type="submit"
-                    className="TodoForm-button TodoForm-button--add"
-                >
+                    className="TodoForm-button TodoForm-button--add">
                     Add
                 </button>
             </div>

@@ -22,15 +22,14 @@
     outline: none;
 }
 
-
-.TodoFieldLeft  button {
+.TodoFieldLeft button {
     grid-row: 2 / 3;
     width: 100px;
     height: 35px;
     margin: 0;
     text-align: center;
     color: white;
-    background-color: #3C5C80;
+    background-color: #3c5c80;
     border: none;
     border-radius: 8px;
     font-weight: 700;

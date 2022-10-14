@@ -9,6 +9,7 @@ function App() {
     const matches = useMediaQuery('(min-width: 1000px)');
 
     return (
+        // prettier-ignore
         <TodoProvider>
             {matches ? <Desktop /> : <Mobile />}
         </TodoProvider>

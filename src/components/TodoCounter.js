@@ -1,5 +1,5 @@
-import React from "react";
-import { TodoContext } from "../TodoContext";
+import React from 'react';
+import { TodoContext } from '../TodoContext';
 import '../styles/TodoCounter.css';
 
 function TodoCounter() {
@@ -14,9 +14,13 @@ function TodoCounter() {
 
     return (
         <div className="TodoCounter">
-            <span className="TodoCounter--percentage">{calculatePercentage()}%</span>
-            <progress className="TodoCounter--progressBar" value={calculatePercentage()} max="100">
-            </progress>
+            <span className="TodoCounter--percentage">
+                {calculatePercentage()}%
+            </span>
+            <progress
+                className="TodoCounter--progressBar"
+                value={calculatePercentage()}
+                max="100"></progress>
         </div>
     );
 }

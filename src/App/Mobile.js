@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';
 import { TodoHeader } from '../components/TodoHeader';
@@ -10,6 +10,7 @@ import { TodoContext } from '../TodoContext';
 import { Modal } from '../components/Modal';
 
 function Mobile() {
+    // prettier-ignore
     const {
         error,
         loading,
@@ -26,14 +27,17 @@ function Mobile() {
             <TodoCounter />
             <TodoSearch />
             <TodoList>
-                <div className='TodoList--container'>
+                <div className="TodoList--container">
                     {error && <p>Error</p>}
-                    {loading &&
-                        <div className='ring-loading'>
+                    {loading && (
+                        <div className="ring-loading">
                             Loading...
-                            <span className='ring-loading__span'></span>
-                        </div>}
-                    {(!loading && !searchedTodos.length) && <p>Create your first TODO!</p>}
+                            <span className="ring-loading__span"></span>
+                        </div>
+                    )}
+                    {!loading && !searchedTodos.length && (
+                        <p>Create your first TODO!</p>
+                    )}
 
                     {searchedTodos.map((todo, index) => (
                         <TodoItem
@@ -58,7 +62,7 @@ function Mobile() {
                 setOpenModal={setOpenModal}
             />
         </React.Fragment>
-        );
+    );
 }
 
 export { Mobile };
