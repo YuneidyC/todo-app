@@ -1,0 +1,9 @@
+.TodoImageLeft {
+    width: 100%;
+    height: 90%;
+    grid-row: 4 / 5;
+    justify-self: center;
+    align-self: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
