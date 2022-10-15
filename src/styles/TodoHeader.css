@@ -23,7 +23,7 @@
     text-align: center;
     font-size: 3.6rem;
     font-weight: bold;
-    background: linear-gradient(90deg, var(--blue), var(--yellow));
+    background-color: var(--dark-grey);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
