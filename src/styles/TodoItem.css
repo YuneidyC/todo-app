@@ -23,10 +23,10 @@ li:last-child {
 .TodoItem-p {
     font-size: 1rem;
     line-height: 30px;
-    font-weight: 400;
     overflow-x: scroll;
     text-overflow: ellipsis;
     margin: 10px;
+    color: #595959;
 }
 
 .TodoItem-p::-webkit-scrollbar {
@@ -74,11 +74,11 @@ li svg {
     position: absolute;
     width: 15px;
     height: 15px;
-    border: 2px solid darkgray;
+    border: 2px solid #595959;
     border-radius: 100%;
     top: 10%;
     left: 10%;
-    color: darkgray;
+    color: #595959;
     user-select: none;
     grid-column: 1 / 2;
     cursor: pointer;
