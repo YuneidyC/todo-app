@@ -14,9 +14,25 @@
     border-radius: 6px;
     opacity: 0.6;
     height: auto;
-    max-height: 480px;
-    scrollbar-width: none;
+    max-height: 400px;
+    scrollbar-width: thin;
+    scrollbar-color: #595959 #bdbdbd;
     width: 100%;
+}
+
+.TodoList--container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.TodoList--container::-webkit-scrollbar-track {
+    background: #bdbdbd;
+    border-radius: 10px;
+}
+
+.TodoList--container::-webkit-scrollbar-thumb {
+    background-color: #595959;
+    border-radius: 10px;
+    border: none;
 }
 
 .TodoList-list__items {
@@ -30,6 +46,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .ring-loading {
