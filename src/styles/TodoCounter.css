@@ -1,8 +1,4 @@
 .TodoCounter {
-    font-size: 1.4rem;
-    text-align: center;
-    font-weight: 400;
-    margin: 0;
     padding: 10px 0 20px;
     display: flex;
     position: relative;
@@ -13,7 +9,7 @@
 .TodoCounter--percentage {
     position: absolute;
     height: 18px;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     text-align: center;
     color: white;
     margin: 0 auto;

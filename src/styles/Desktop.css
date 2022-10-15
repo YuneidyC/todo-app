@@ -4,7 +4,7 @@ main {
     align-items: center;
     margin: 0 auto;
     width: 900px;
-    height: 900px;
+    /* height: 1100px; */
     min-width: 1200px;
     position: relative;
 }

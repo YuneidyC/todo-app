@@ -1,5 +1,5 @@
 li {
-    background-color: white;
+    background-color: var(--just-white);
     position: relative;
     display: grid;
     grid-template-columns: 50px 1fr 50px;
@@ -17,16 +17,17 @@ li:last-child {
 }
 
 .checklist--check {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: transparent;
 }
 
 .TodoItem-p {
-    font-size: 1rem;
+    font-size: 1.6rem;
     line-height: 30px;
+    font-weight: 500;
     overflow-x: scroll;
     text-overflow: ellipsis;
     margin: 10px;
-    color: #595959;
+    color: var(--dark-grey);
 }
 
 .TodoItem-p::-webkit-scrollbar {
@@ -52,16 +53,11 @@ li:last-child {
     justify-self: center;
     align-self: center;
     cursor: pointer;
-    font-size: 22px;
     position: relative;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-
-.TodoItem--completed {
-    background-color: #dddada;
 }
 
 li svg {
@@ -74,11 +70,11 @@ li svg {
     position: absolute;
     width: 15px;
     height: 15px;
-    border: 2px solid #595959;
+    border: 2px solid var(--dark-grey);
     border-radius: 100%;
     top: 10%;
     left: 10%;
-    color: #595959;
+    color: var(--dark-grey);
     user-select: none;
     grid-column: 1 / 2;
     cursor: pointer;
@@ -92,8 +88,8 @@ li svg {
     position: absolute;
     width: 0px;
     height: 0px;
-    border-bottom: 2px solid #29aab3;
-    border-left: 2px solid #29aab3;
+    border-bottom: 2px solid var(--blue);
+    border-left: 2px solid var(--blue);
     top: 25%;
     left: 50%;
     transform-origin: bottom left;
@@ -103,7 +99,7 @@ li svg {
 }
 
 .checklist .checklist--check {
-    border: 2px solid #29aab3;
+    border: 2px solid var(--blue);
 }
 
 .checklist .checklist--check:after {

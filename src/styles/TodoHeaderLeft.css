@@ -1,7 +1,7 @@
 .TodoHeaderLeft {
     grid-row: 1 / 2;
-    font-size: 2rem;
-    color: #595959;
+    font-size: var(--lg);
+    color: var(--dark-grey);
     padding-left: 50px;
-    margin: 0;
+    margin: 20px 0 0 0;
 }

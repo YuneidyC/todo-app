@@ -17,8 +17,8 @@
     border: none;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    font-size: 1.2rem;
-    color: #595959;
+    font-size: 1.8rem;
+    color: var(--dark-grey);
     outline: none;
 }
 
@@ -28,7 +28,7 @@
     height: 35px;
     margin: 0;
     text-align: center;
-    color: white;
+    color: var(--just-white);
     background-color: #3c5c80;
     border: none;
     border-radius: 8px;
