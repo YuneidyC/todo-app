@@ -1,10 +1,23 @@
+#root {
+    display: grid;
+    grid-template-rows: 30px auto;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.darkMode--button {
+    justify-self: end;
+    align-self: end;
+    cursor: pointer;
+}
+
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     width: 900px;
-    /* height: 1100px; */
     min-width: 1200px;
     position: relative;
 }
