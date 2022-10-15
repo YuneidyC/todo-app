@@ -1,4 +1,3 @@
-import './App.css';
 import React from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 import { TodoProvider } from '../TodoContext';
