@@ -44,8 +44,8 @@ function Mobile() {
                             key={index}
                             text={todo.text}
                             completed={todo.completed}
-                            onComplete={() => completeTodo(todo.text)}
-                            onDelete={() => deleteTodo(todo.text)}
+                            onComplete={() => completeTodo(todo.id)}
+                            onDelete={() => deleteTodo(todo.id)}
                         />
                     ))}
                 </div>
