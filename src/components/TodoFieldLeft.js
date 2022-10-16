@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import '../styles/TodoFieldLeft.css';
 
 import { TodoContext } from '../TodoContext';
@@ -6,6 +6,8 @@ import { TodoContext } from '../TodoContext';
 function TodoFieldLeft() {
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const [errorInput, setErrorInput] = React.useState(false);
+
+    const placeholder = 'Add a task';
 
     const { addTodo } = React.useContext(TodoContext);
 
@@ -17,10 +19,24 @@ function TodoFieldLeft() {
         event.preventDefault();
         if (newTodoValue) {
             addTodo(newTodoValue);
+            setNewTodoValue('');
         } else {
             setErrorInput(true);
         }
     };
+
+    const ref = useRef();
+    useEffect(() => {
+        const checkIfClickedOutside = (e) => {
+            if (ref.current && !ref.current.contains(e.target)) {
+                setErrorInput(false);
+            }
+        };
+        document.addEventListener('click', checkIfClickedOutside);
+        return () => {
+            document.removeEventListener('click', checkIfClickedOutside);
+        };
+    }, []);
 
     return (
         <div className="TodoFieldLeft">
@@ -28,10 +44,11 @@ function TodoFieldLeft() {
                 className="TodoFieldLeft--input"
                 onChange={onChange}
                 type="text"
-                placeholder="Add a task"
+                placeholder={placeholder}
+                value={newTodoValue}
             />
             {errorInput && newTodoValue.length <= 0 ? <span className='TodoForm-error'>{'Field cannot be empty'}</span> : ""}
-            <button className="TodoFieldLeft--button" onClick={onSubmit}>
+            <button className="TodoFieldLeft--button" onClick={onSubmit} ref={ref}>
                 Create a task
             </button>
         </div>
