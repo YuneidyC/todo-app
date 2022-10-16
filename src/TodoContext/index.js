@@ -55,13 +55,6 @@ function TodoProvider(props) {
         saveTodos(newTodos);
     }
 
-    // const uncheckTodo = (id) => {
-    //     const todoIndex = todos.findIndex((todo) => todo.id === id);
-    //     const newTodos = [...todos];
-    //     newTodos[todoIndex].completed = false;
-    //     saveTodos(newTodos);
-    // }
-
     return (
         // prettier-ignore
         <TodoContext.Provider value={{
