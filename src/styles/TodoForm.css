@@ -67,3 +67,8 @@ textarea:focus {
     border: transparent;
     font-size: var(--sm);
 }
+
+.TodoForm-error {
+    color: red;
+    font-size: var(--sm);
+}

@@ -5,6 +5,7 @@ import { TodoContext } from '../TodoContext';
 
 function TodoFieldLeft() {
     const [newTodoValue, setNewTodoValue] = React.useState('');
+    const [errorInput, setErrorInput] = React.useState(false);
 
     const { addTodo } = React.useContext(TodoContext);
 
@@ -14,8 +15,11 @@ function TodoFieldLeft() {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        addTodo(newTodoValue);
-        setNewTodoValue('');
+        if (newTodoValue) {
+            addTodo(newTodoValue);
+        } else {
+            setErrorInput(true);
+        }
     };
 
     return (
@@ -26,6 +30,7 @@ function TodoFieldLeft() {
                 type="text"
                 placeholder="Add a task"
             />
+            {errorInput && newTodoValue.length <= 0 ? <span className='TodoForm-error'>{'Field cannot be empty'}</span> : ""}
             <button className="TodoFieldLeft--button" onClick={onSubmit}>
                 Create a task
             </button>

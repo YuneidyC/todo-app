@@ -4,6 +4,7 @@ import '../styles/TodoForm.css';
 
 function TodoForm() {
     const [newTodoValue, setNewTodoValue] = React.useState('');
+    const [errorInput, setErrorInput] = React.useState(false);
 
     const { addTodo, openModal, setOpenModal } = React.useContext(TodoContext);
 
@@ -31,10 +32,14 @@ function TodoForm() {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        addTodo(newTodoValue);
-        changeRotateButton();
-        setOpenModal(false);
-        setNewTodoValue('');
+        if (newTodoValue) {
+            addTodo(newTodoValue);
+            changeRotateButton();
+            setOpenModal(false);
+            setNewTodoValue('');
+        } else {
+            setErrorInput(true);
+        }
     };
 
     const ref = useRef();
@@ -63,6 +68,7 @@ function TodoForm() {
                 onChange={onChange}
                 placeholder="Add a task"
             />
+            {errorInput && newTodoValue.length <= 0 ? <span className='TodoForm-error'>{'Field cannot be empty'}</span> : ""}
             <div className="TodoForm-buttonContainer">
                 <button
                     type="button"
