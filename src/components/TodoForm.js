@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { TodoContext } from '../TodoContext';
 import '../styles/TodoForm.css';
 
 function TodoForm() {
     const [newTodoValue, setNewTodoValue] = React.useState('');
 
-    const { addTodo, setOpenModal } = React.useContext(TodoContext);
+    const { addTodo, openModal, setOpenModal } = React.useContext(TodoContext);
 
     const onChange = (event) => {
         setNewTodoValue(event.target.value);
@@ -37,8 +37,26 @@ function TodoForm() {
         setNewTodoValue('');
     };
 
+    const ref = useRef();
+    useEffect(() => {
+        const checkIfClickedOutside = (e) => {
+            if (openModal) {
+                if (ref.current && ref.current.contains(e.target)) {
+                    setOpenModal(true);
+                } else {
+                    setOpenModal(false);
+                }
+            }
+        };
+        document.addEventListener('click', checkIfClickedOutside);
+        return () => {
+            document.removeEventListener('click', checkIfClickedOutside);
+            changeRotateButton();
+        };
+    }, [openModal, setOpenModal]);
+
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} ref={ref}>
             <label className="TodoForm-label">Add your TODO</label>
             <textarea
                 value={newTodoValue}
