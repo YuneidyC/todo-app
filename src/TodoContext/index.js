@@ -37,19 +37,30 @@ function TodoProvider(props) {
         saveTodos(newTodos);
     };
 
-    const completeTodo = (id) => {
-        const todoIndex = todos.findIndex((todo) => todo.id === id);
-        const newTodos = [...todos];
-        newTodos[todoIndex].completed = true;
-        saveTodos(newTodos);
-    };
-
     const deleteTodo = (id) => {
         const todoIndex = todos.findIndex((todo) => todo.id === id);
         const newTodos = [...todos];
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
     };
+
+    const checkOrUncheck = (id) => {
+        const todoIndex = todos.findIndex((todo) => todo.id === id);
+        const newTodos = [...todos];
+        if(newTodos[todoIndex].completed) {
+            newTodos[todoIndex].completed = false;
+        } else {
+            newTodos[todoIndex].completed = true;
+        }
+        saveTodos(newTodos);
+    }
+
+    // const uncheckTodo = (id) => {
+    //     const todoIndex = todos.findIndex((todo) => todo.id === id);
+    //     const newTodos = [...todos];
+    //     newTodos[todoIndex].completed = false;
+    //     saveTodos(newTodos);
+    // }
 
     return (
         // prettier-ignore
@@ -62,8 +73,8 @@ function TodoProvider(props) {
             setSearchValue,
             searchedTodos,
             addTodo,
-            completeTodo,
             deleteTodo,
+            checkOrUncheck,
             openModal,
             setOpenModal,
         }}>

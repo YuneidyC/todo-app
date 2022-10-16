@@ -15,10 +15,10 @@ function Mobile() {
         error,
         loading,
         searchedTodos,
-        completeTodo,
         deleteTodo,
         openModal,
-        setOpenModal
+        setOpenModal,
+        checkOrUncheck,
     } = React.useContext(TodoContext);
 
     return (
@@ -42,10 +42,11 @@ function Mobile() {
                     {searchedTodos.map((todo, index) => (
                         <TodoItem
                             key={index}
+                            id={todo.id}
                             text={todo.text}
                             completed={todo.completed}
-                            onComplete={() => completeTodo(todo.id)}
                             onDelete={() => deleteTodo(todo.id)}
+                            uncheck={() => checkOrUncheck(todo.id)}
                         />
                     ))}
                 </div>

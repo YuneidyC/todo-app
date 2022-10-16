@@ -18,8 +18,8 @@ function Desktop() {
         error,
         loading,
         searchedTodos,
-        completeTodo,
-        deleteTodo } = React.useContext(TodoContext);
+        deleteTodo,
+        checkOrUncheck } = React.useContext(TodoContext);
 
     return (
         <React.Fragment>
@@ -53,9 +53,10 @@ function Desktop() {
                                 <TodoItem
                                     key={index}
                                     text={todo.text}
+                                    id={todo.id}
                                     completed={todo.completed}
-                                    onComplete={() => completeTodo(todo.id)}
                                     onDelete={() => deleteTodo(todo.id)}
+                                    uncheck={() => checkOrUncheck(todo.id)}
                                 />
                             ))}
                         </div>

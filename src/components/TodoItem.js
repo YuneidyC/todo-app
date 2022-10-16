@@ -19,7 +19,7 @@ function TodoItem(props) {
                 <label
                     htmlFor={id}
                     className={`${props.completed && 'checklist--check'}`}
-                    onClick={props.onComplete}></label>
+                    onClick={props.uncheck}></label>
             </div>
             <p
                 className={`TodoItem-p ${
