@@ -47,8 +47,17 @@ function TodoFieldLeft() {
                 placeholder={placeholder}
                 value={newTodoValue}
             />
-            {errorInput && newTodoValue.length <= 0 ? <span className='TodoForm-error'>{'Field cannot be empty'}</span> : ""}
-            <button className="TodoFieldLeft--button" onClick={onSubmit} ref={ref}>
+            {errorInput && newTodoValue.length <= 0 ? (
+                <span className="TodoForm-error">
+                    {'Field cannot be empty'}
+                </span>
+            ) : (
+                ''
+            )}
+            <button
+                className="TodoFieldLeft--button"
+                onClick={onSubmit}
+                ref={ref}>
                 Create a task
             </button>
         </div>

@@ -54,7 +54,7 @@ function TodoProvider(props) {
             newTodos[todoIndex].completed = true;
         }
         saveTodos(newTodos);
-    }
+    };
 
     const handleClick = () => {
         setToggled((s) => !s);
@@ -63,7 +63,7 @@ function TodoProvider(props) {
         } else {
             document.body.classList.remove('dark');
         }
-    }
+    };
 
     return (
         // prettier-ignore

@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import '../styles/CreateTodoButton.css';
 
 function CreateTodoButton({ openModal, setOpenModal, toggled }) {
-
     const ref = useRef();
     useEffect(() => {
         const checkIfClickedButton = (e) => {
@@ -38,7 +37,7 @@ function CreateTodoButton({ openModal, setOpenModal, toggled }) {
     }, [openModal, setOpenModal]);
 
     return (
-        <div className={`CreateTodoButton ${toggled ? "dark" : ""} `}>
+        <div className={`CreateTodoButton ${toggled ? 'dark' : ''} `}>
             <button className="CreateTodoButton--button" ref={ref}>
                 <span className="CreateTodoButton--button__span">+</span>
             </button>

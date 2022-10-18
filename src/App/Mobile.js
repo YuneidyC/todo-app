@@ -27,9 +27,7 @@ function Mobile() {
     return (
         <React.Fragment>
             <Toggle toggled={toggled} onClick={handleClick} />
-            <TodoHeader
-                toggled={toggled}
-            />
+            <TodoHeader toggled={toggled} />
             <TodoCounter />
             <TodoSearch />
             <TodoList>

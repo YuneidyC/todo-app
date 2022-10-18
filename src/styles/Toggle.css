@@ -32,7 +32,7 @@
     border: none;
 }
 
-.dark>.circle {
+.dark > .circle {
     background-color: var(--yellow);
     transform: translate(17px, 0);
 }

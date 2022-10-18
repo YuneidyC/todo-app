@@ -68,7 +68,13 @@ function TodoForm() {
                 onChange={onChange}
                 placeholder="Add a task"
             />
-            {errorInput && newTodoValue.length <= 0 ? <span className='TodoForm-error'>{'Field cannot be empty'}</span> : ""}
+            {errorInput && newTodoValue.length <= 0 ? (
+                <span className="TodoForm-error">
+                    {'Field cannot be empty'}
+                </span>
+            ) : (
+                ''
+            )}
             <div className="TodoForm-buttonContainer">
                 <button
                     type="button"

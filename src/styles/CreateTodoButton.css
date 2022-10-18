@@ -39,7 +39,6 @@
     transform: rotate(90deg);
 }
 
-
 .CreateTodoButton.dark {
     background-color: var(--yellow);
 }

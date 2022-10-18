@@ -38,9 +38,7 @@ function Desktop() {
 
                 <section className="section--right">
                     <Toggle toggled={toggled} onClick={handleClick} />
-                    <TodoHeader
-                        toggled={toggled}
-                    />
+                    <TodoHeader toggled={toggled} />
                     <TodoCounter />
                     <TodoSearch />
                     <TodoList>
