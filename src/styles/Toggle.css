@@ -1,11 +1,11 @@
-.toggle-container {
+.Toggle-container {
     display: flex;
     margin-top: 100px;
     justify-self: flex-end;
     align-self: center;
 }
 
-.toggle {
+.Toggle {
     position: relative;
     height: 17.5px;
     width: 35px;
@@ -14,7 +14,7 @@
     background: var(--dark-grey);
 }
 
-.toggle.dark {
+.Toggle.dark {
     background-color: var(--blue);
 }
 
