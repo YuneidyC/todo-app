@@ -11,6 +11,7 @@ import { TodoContext } from '../TodoContext';
 import { TodoHeaderLeft } from '../components/TodoHeaderLeft';
 import { TodoImageLeft } from '../components/TodoImageLeft';
 import { TodoFieldLeft } from '../components/TodoFieldLeft';
+import { Toggle } from '../components/Toggle';
 
 function Desktop() {
     // prettier-ignore
@@ -19,7 +20,10 @@ function Desktop() {
         loading,
         searchedTodos,
         deleteTodo,
-        checkOrUncheck } = React.useContext(TodoContext);
+        checkOrUncheck,
+        toggled,
+        handleClick
+    } = React.useContext(TodoContext);
 
     return (
         <React.Fragment>
@@ -33,7 +37,10 @@ function Desktop() {
                 </section>
 
                 <section className="section--right">
-                    <TodoHeader />
+                    <Toggle toggled={toggled} onClick={handleClick} />
+                    <TodoHeader
+                        toggled={toggled}
+                    />
                     <TodoCounter />
                     <TodoSearch />
                     <TodoList>

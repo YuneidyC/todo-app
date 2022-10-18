@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/TodoHeader.css';
 
-function TodoHeader() {
+function TodoHeader({ toggled }) {
     return (
         <div className="TodoHeader">
-            <p className="TodoHeader--p">Your tasks</p>
+            <p className={`TodoHeader--p ${toggled ? "dark" : ""}`}>Your tasks</p>
         </div>
     );
 }

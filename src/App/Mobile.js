@@ -8,6 +8,7 @@ import { TodoForm } from '../components/TodoForm';
 import { CreateTodoButton } from '../components/CreateTodoButton';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../components/Modal';
+import { Toggle } from '../components/Toggle';
 
 function Mobile() {
     // prettier-ignore
@@ -19,11 +20,16 @@ function Mobile() {
         openModal,
         setOpenModal,
         checkOrUncheck,
+        toggled,
+        handleClick
     } = React.useContext(TodoContext);
 
     return (
         <React.Fragment>
-            <TodoHeader />
+            <Toggle toggled={toggled} onClick={handleClick} />
+            <TodoHeader
+                toggled={toggled}
+            />
             <TodoCounter />
             <TodoSearch />
             <TodoList>
@@ -61,6 +67,7 @@ function Mobile() {
             <CreateTodoButton
                 openModal={openModal}
                 setOpenModal={setOpenModal}
+                toggled={toggled}
             />
         </React.Fragment>
     );

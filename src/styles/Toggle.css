@@ -1,0 +1,38 @@
+.toggle-container {
+    display: flex;
+    margin-top: 100px;
+    justify-self: flex-end;
+    align-self: center;
+}
+
+.toggle {
+    position: relative;
+    height: 17.5px;
+    width: 35px;
+    border-radius: 50px;
+    margin: auto;
+    background: var(--dark-grey);
+}
+
+.toggle.dark {
+    background-color: var(--blue);
+}
+
+.circle {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: var(--blue);
+    position: absolute;
+    top: 1.7px;
+    left: 2px;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.dark>.circle {
+    background-color: var(--yellow);
+    transform: translate(17px, 0);
+}

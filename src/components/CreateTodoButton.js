@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import '../styles/CreateTodoButton.css';
 
-function CreateTodoButton({ openModal, setOpenModal }) {
+function CreateTodoButton({ openModal, setOpenModal, toggled }) {
 
     const ref = useRef();
     useEffect(() => {
@@ -38,7 +38,7 @@ function CreateTodoButton({ openModal, setOpenModal }) {
     }, [openModal, setOpenModal]);
 
     return (
-        <div className="CreateTodoButton">
+        <div className={`CreateTodoButton ${toggled ? "dark" : ""} `}>
             <button className="CreateTodoButton--button" ref={ref}>
                 <span className="CreateTodoButton--button__span">+</span>
             </button>

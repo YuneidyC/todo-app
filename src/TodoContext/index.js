@@ -10,6 +10,7 @@ function TodoProvider(props) {
     const { item: todos, saveItem: saveTodos, loading, error } = useLocalStorage('TODOS_V1', []);
     const [searchValue, setSearchValue] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
+    const [toggled, setToggled] = React.useState(false);
 
     const completedTodos = todos.filter((todo) => todo.completed).length;
     const totalTodos = todos.length;
@@ -47,12 +48,21 @@ function TodoProvider(props) {
     const checkOrUncheck = (id) => {
         const todoIndex = todos.findIndex((todo) => todo.id === id);
         const newTodos = [...todos];
-        if(newTodos[todoIndex].completed) {
+        if (newTodos[todoIndex].completed) {
             newTodos[todoIndex].completed = false;
         } else {
             newTodos[todoIndex].completed = true;
         }
         saveTodos(newTodos);
+    }
+
+    const handleClick = () => {
+        setToggled((s) => !s);
+        if (!toggled) {
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.remove('dark');
+        }
     }
 
     return (
@@ -70,6 +80,9 @@ function TodoProvider(props) {
             checkOrUncheck,
             openModal,
             setOpenModal,
+            toggled,
+            setToggled,
+            handleClick
         }}>
             {props.children}
         </TodoContext.Provider>
