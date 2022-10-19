@@ -12,6 +12,8 @@ import { TodoHeaderLeft } from '../components/TodoHeaderLeft';
 import { TodoImageLeft } from '../components/TodoImageLeft';
 import { TodoFieldLeft } from '../components/TodoFieldLeft';
 import { Toggle } from '../components/Toggle';
+import { Modal } from '../components/Modal';
+import { TodoEditItem } from '../components/TodoEditItem';
 
 function Desktop() {
     // prettier-ignore
@@ -22,7 +24,10 @@ function Desktop() {
         deleteTodo,
         checkOrUncheck,
         toggled,
-        handleClick
+        handleClick,
+        onEdit,
+        openEditModal,
+        setOpenEditModal
     } = React.useContext(TodoContext);
 
     return (
@@ -62,10 +67,18 @@ function Desktop() {
                                     completed={todo.completed}
                                     onDelete={() => deleteTodo(todo.id)}
                                     uncheck={() => checkOrUncheck(todo.id)}
+                                    onEdit={() => onEdit(todo.id)}
+                                    openEditModal={openEditModal}
+                                    setOpenEditModal={setOpenEditModal}
                                 />
                             ))}
                         </div>
                     </TodoList>
+                    {openEditModal && (
+                        <Modal>
+                            <TodoEditItem />
+                        </Modal>
+                    )}
                 </section>
             </main>
         </React.Fragment>
