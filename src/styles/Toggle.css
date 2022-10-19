@@ -24,8 +24,8 @@
     border-radius: 50%;
     background-color: var(--blue);
     position: absolute;
-    top: 1.7px;
-    left: 2px;
+    top: 1.8px;
+    left: 2.6px;
     cursor: pointer;
     transition: all 0.2s ease;
     border: none;
@@ -33,5 +33,5 @@
 
 .dark > .circle {
     background-color: var(--yellow);
-    transform: translate(17px, 0);
+    transform: translate(16px, 0);
 }
