@@ -20,6 +20,10 @@
     width: 100%;
 }
 
+.TodoList--container {
+    overflow: auto;
+}
+
 .TodoList--container::-webkit-scrollbar {
     width: 12px;
 }
