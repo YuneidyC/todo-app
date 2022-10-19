@@ -48,7 +48,6 @@ function TodoEditItem() {
 
     return (
         <form onSubmit={onSubmit} ref={ref}>
-            {console.log('here')},
             <label className="TodoEdit-label">Update your task</label>
             <textarea
                 value={newTodoValue}
