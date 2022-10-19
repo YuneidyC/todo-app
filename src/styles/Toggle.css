@@ -26,7 +26,6 @@
     position: absolute;
     top: 1.7px;
     left: 2px;
-    z-index: 1;
     cursor: pointer;
     transition: all 0.2s ease;
     border: none;
