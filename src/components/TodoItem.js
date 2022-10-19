@@ -52,9 +52,9 @@ function TodoItem(props) {
                 }`}>
                 {props.text}
             </p>
-            <div className='TodoItem-MdModeEdit' ref={ref}>
-                <MdModeEdit className="edit" style={editPencil} />
-            </div>
+            <button className={`TodoItem-MdModeEdit ${props.completed && 'disable'}`} ref={ref} disabled={props.completed}>
+                <MdModeEdit className='edit' style={editPencil} />
+            </button>
             <BsFillTrashFill
                 className="trash-can"
                 style={trashIcon}

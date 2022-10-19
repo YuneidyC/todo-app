@@ -74,6 +74,13 @@ li:last-child {
     align-self: center;
     cursor: pointer;
     grid-column: 3 / 4;
+    border: none;
+    background: transparent;
+}
+
+.disable {
+    cursor: default;
+    opacity: .65;
 }
 
 .checklist label {
