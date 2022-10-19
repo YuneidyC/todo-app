@@ -17,8 +17,7 @@ main {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    width: 900px;
-    min-width: 1200px;
+    width: 1200px;
     position: relative;
 }
 
