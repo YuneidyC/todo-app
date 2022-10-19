@@ -1,4 +1,4 @@
-import React, { useId } from 'react';
+import React, { useId, useRef, useEffect } from 'react';
 import '../styles/TodoItem.css';
 import { BsFillTrashFill } from 'react-icons/bs';
 import { MdModeEdit } from 'react-icons/md';
@@ -7,6 +7,29 @@ function TodoItem(props) {
     const trashIcon = { color: '#29aab3', fontSize: '20px' };
     const editPencil = { color: '#595959', fontSize: '20px' };
     const id = useId();
+
+    const ref = useRef();
+    useEffect(() => {
+        const checkIfClickedButton = (e) => {
+            if (ref.current && ref.current.contains(e.target)) {
+                onClickButton();
+            }
+            e.stopPropagation();
+        };
+
+        const onClickButton = () => {
+            if (!props.openEditModal) {
+                props.onEdit();
+                props.setOpenEditModal(true);
+            }
+        };
+
+        document.addEventListener('click', checkIfClickedButton);
+        return () => {
+            document.removeEventListener('click', checkIfClickedButton);
+        };
+    }, [props.openEditModal, props.setOpenEditModal, props]);
+
 
     return (
         <li className={`${props.completed && 'checklist--check'}`}>
@@ -29,8 +52,14 @@ function TodoItem(props) {
                 }`}>
                 {props.text}
             </p>
-            <MdModeEdit className='edit' style={editPencil} />
-            <BsFillTrashFill className='trash-can' style={trashIcon} onClick={props.onDelete} />
+            <div className='TodoItem-MdModeEdit' ref={ref}>
+                <MdModeEdit className="edit" style={editPencil} />
+            </div>
+            <BsFillTrashFill
+                className="trash-can"
+                style={trashIcon}
+                onClick={props.onDelete}
+            />
         </li>
     );
 }

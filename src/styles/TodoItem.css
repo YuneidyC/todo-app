@@ -67,7 +67,9 @@ li:last-child {
     grid-column: 4 / 5;
 }
 
-.edit {
+.TodoItem-MdModeEdit {
+    width: 20px;
+    height: 20px;
     justify-self: flex-end;
     align-self: center;
     cursor: pointer;
