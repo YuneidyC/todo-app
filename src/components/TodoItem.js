@@ -30,7 +30,6 @@ function TodoItem(props) {
         };
     }, [props.openEditModal, props.setOpenEditModal, props]);
 
-
     return (
         <li className={`${props.completed && 'checklist--check'}`}>
             <div className="checklist">
@@ -52,8 +51,13 @@ function TodoItem(props) {
                 }`}>
                 {props.text}
             </p>
-            <button className={`TodoItem-MdModeEdit ${props.completed && 'disable'}`} ref={ref} disabled={props.completed}>
-                <MdModeEdit className='edit' style={editPencil} />
+            <button
+                className={`TodoItem-MdModeEdit ${
+                    props.completed && 'disable'
+                }`}
+                ref={ref}
+                disabled={props.completed}>
+                <MdModeEdit className="edit" style={editPencil} />
             </button>
             <BsFillTrashFill
                 className="trash-can"

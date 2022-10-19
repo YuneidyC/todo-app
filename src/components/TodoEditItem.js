@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from 'react';
-import { TodoContext } from "../TodoContext";
+import { TodoContext } from '../TodoContext';
 import '../styles/TodoEditItem.css';
 
 function TodoEditItem() {
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const [errorInput, setErrorInput] = React.useState(false);
 
-    const { editTextTodo, openEditModal, setOpenEditModal, updateText } = React.useContext(TodoContext);
+    const { editTextTodo, openEditModal, setOpenEditModal, updateText } =
+        React.useContext(TodoContext);
 
     const onChange = (event) => {
         setNewTodoValue(event.target.value);
@@ -44,7 +45,6 @@ function TodoEditItem() {
             document.removeEventListener('click', checkIfClickedOutside);
         };
     }, [openEditModal, setOpenEditModal]);
-
 
     return (
         <form onSubmit={onSubmit} ref={ref}>

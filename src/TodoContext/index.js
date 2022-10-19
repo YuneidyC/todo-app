@@ -58,7 +58,7 @@ function TodoProvider(props) {
         const todoIndex = todos.findIndex((todo) => todo.id === updateText.id);
         newTodos[todoIndex].text = text;
         saveTodos(newTodos);
-    }
+    };
 
     const checkOrUncheck = (id) => {
         const todoIndex = todos.findIndex((todo) => todo.id === id);

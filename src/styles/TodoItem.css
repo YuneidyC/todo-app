@@ -80,7 +80,7 @@ li:last-child {
 
 .disable {
     cursor: default;
-    opacity: .65;
+    opacity: 0.65;
 }
 
 .checklist label {
