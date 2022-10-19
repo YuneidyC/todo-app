@@ -2,7 +2,7 @@ li {
     background-color: var(--just-white);
     position: relative;
     display: grid;
-    grid-template-columns: 50px 1fr 50px;
+    grid-template-columns: 50px 1fr 50px 50px;
     grid-template-rows: 1fr;
     justify-content: center;
     align-items: center;
@@ -60,10 +60,18 @@ li:last-child {
     user-select: none;
 }
 
-li svg {
+.trash-can {
     justify-self: center;
     align-self: center;
     cursor: pointer;
+    grid-column: 4 / 5;
+}
+
+.edit {
+    justify-self: flex-end;
+    align-self: center;
+    cursor: pointer;
+    grid-column: 3 / 4;
 }
 
 .checklist label {

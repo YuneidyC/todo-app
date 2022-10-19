@@ -1,9 +1,11 @@
 import React, { useId } from 'react';
 import '../styles/TodoItem.css';
 import { BsFillTrashFill } from 'react-icons/bs';
+import { MdModeEdit } from 'react-icons/md';
 
 function TodoItem(props) {
     const trashIcon = { color: '#29aab3', fontSize: '20px' };
+    const editPencil = { color: '#595959', fontSize: '20px' };
     const id = useId();
 
     return (
@@ -27,7 +29,8 @@ function TodoItem(props) {
                 }`}>
                 {props.text}
             </p>
-            <BsFillTrashFill style={trashIcon} onClick={props.onDelete} />
+            <MdModeEdit className='edit' style={editPencil} />
+            <BsFillTrashFill className='trash-can' style={trashIcon} onClick={props.onDelete} />
         </li>
     );
 }
