@@ -49,7 +49,7 @@ textarea:focus {
     width: 100%;
 }
 
-.TodoForm-buttom {
+.TodoForm-button {
     cursor: pointer;
     display: inline-block;
     color: var(--dark-grey);
