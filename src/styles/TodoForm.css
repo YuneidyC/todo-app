@@ -7,7 +7,7 @@ form {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 30px;
+    border-radius: 8px;
 }
 
 .TodoForm-label {
@@ -66,6 +66,8 @@ textarea:focus {
     height: 25px;
     border: transparent;
     font-size: var(--sm);
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.50);
 }
 
 .TodoForm-error {
