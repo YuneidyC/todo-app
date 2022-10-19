@@ -9,7 +9,9 @@ function TodoProvider(props) {
     // prettier-ignore
     const { item: todos, saveItem: saveTodos, loading, error } = useLocalStorage('TODOS_V1', []);
     const [searchValue, setSearchValue] = React.useState('');
+    const [updateText, setUpdateText] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
+    const [openEditModal, setOpenEditModal] = React.useState(false);
     const [toggled, setToggled] = React.useState(false);
 
     const completedTodos = todos.filter((todo) => todo.completed).length;
@@ -44,6 +46,19 @@ function TodoProvider(props) {
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
     };
+
+    const onEdit = (id) => {
+        const todoIndex = todos.find((todo) => todo.id === id);
+        setOpenEditModal(true);
+        setUpdateText(todoIndex);
+    };
+
+    const editTextTodo = (text) => {
+        const newTodos = [...todos];
+        const todoIndex = todos.findIndex((todo) => todo.id === updateText.id);
+        newTodos[todoIndex].text = text;
+        saveTodos(newTodos);
+    }
 
     const checkOrUncheck = (id) => {
         const todoIndex = todos.findIndex((todo) => todo.id === id);
@@ -82,7 +97,12 @@ function TodoProvider(props) {
             setOpenModal,
             toggled,
             setToggled,
-            handleClick
+            handleClick,
+            onEdit,
+            openEditModal,
+            setOpenEditModal,
+            editTextTodo,
+            updateText
         }}>
             {props.children}
         </TodoContext.Provider>

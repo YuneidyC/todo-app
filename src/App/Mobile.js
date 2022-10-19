@@ -9,6 +9,7 @@ import { CreateTodoButton } from '../components/CreateTodoButton';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../components/Modal';
 import { Toggle } from '../components/Toggle';
+import { TodoEditItem } from '../components/TodoEditItem';
 
 function Mobile() {
     // prettier-ignore
@@ -21,7 +22,10 @@ function Mobile() {
         setOpenModal,
         checkOrUncheck,
         toggled,
-        handleClick
+        handleClick,
+        onEdit,
+        openEditModal,
+        setOpenEditModal
     } = React.useContext(TodoContext);
 
     return (
@@ -51,6 +55,9 @@ function Mobile() {
                             completed={todo.completed}
                             onDelete={() => deleteTodo(todo.id)}
                             uncheck={() => checkOrUncheck(todo.id)}
+                            onEdit={() => onEdit(todo.id)}
+                            openEditModal={openEditModal}
+                            setOpenEditModal={setOpenEditModal}
                         />
                     ))}
                 </div>
@@ -59,6 +66,12 @@ function Mobile() {
             {openModal && (
                 <Modal>
                     <TodoForm />
+                </Modal>
+            )}
+
+            {openEditModal && (
+                <Modal>
+                    <TodoEditItem />
                 </Modal>
             )}
 
