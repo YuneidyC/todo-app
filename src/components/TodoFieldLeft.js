@@ -41,21 +41,21 @@ function TodoFieldLeft() {
     return (
         <div className="TodoFieldLeft">
             <input
-                className="TodoFieldLeft--input"
+                className="TodoFieldLeft__input"
                 onChange={onChange}
                 type="text"
                 placeholder={placeholder}
                 value={newTodoValue}
             />
             {errorInput && newTodoValue.length <= 0 ? (
-                <span className="TodoForm-error">
+                <span className="TodoForm__error">
                     {'Field cannot be empty'}
                 </span>
             ) : (
                 ''
             )}
             <button
-                className="TodoFieldLeft--button"
+                className="TodoFieldLeft__button"
                 onClick={onSubmit}
                 ref={ref}>
                 Create a task

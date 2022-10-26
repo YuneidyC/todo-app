@@ -19,7 +19,7 @@ function TodoForm() {
 
     const changeRotateButton = () => {
         const spanButton = document.getElementsByClassName(
-            'CreateTodoButton--button__span'
+            'CreateTodoButton__span'
         )[0];
         spanButton.style.transform = 'rotate(0deg)';
         spanButton.addEventListener('mouseover', (event) => {
@@ -62,29 +62,29 @@ function TodoForm() {
 
     return (
         <form onSubmit={onSubmit} ref={ref}>
-            <label className="TodoForm-label">Add your TODO</label>
+            <label className="TodoForm__label">Add your TODO</label>
             <textarea
                 value={newTodoValue}
                 onChange={onChange}
                 placeholder="Add a task"
             />
             {errorInput && newTodoValue.length <= 0 ? (
-                <span className="TodoForm-error">
+                <span className="TodoForm__error">
                     {'Field cannot be empty'}
                 </span>
             ) : (
                 ''
             )}
-            <div className="TodoForm-buttonContainer">
+            <div className="TodoForm__button">
                 <button
                     type="button"
-                    className="TodoForm-button TodoForm-button--cancel"
+                    className="TodoForm__cancel"
                     onClick={onCancel}>
                     Cancel
                 </button>
                 <button
                     type="submit"
-                    className="TodoForm-button TodoForm-button--add">
+                    className="TodoForm__add">
                     Add
                 </button>
             </div>

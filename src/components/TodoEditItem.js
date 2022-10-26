@@ -48,29 +48,29 @@ function TodoEditItem() {
 
     return (
         <form onSubmit={onSubmit} ref={ref}>
-            <label className="TodoEdit-label">Update your task</label>
+            <label className="TodoEdit__label">Update your task</label>
             <textarea
                 value={newTodoValue}
                 onChange={onChange}
                 placeholder={updateText.text}
             />
             {errorInput && newTodoValue.length <= 0 ? (
-                <span className="TodoEdit-error">
+                <span className="TodoEdit__error">
                     {'Field cannot be empty'}
                 </span>
             ) : (
                 ''
             )}
-            <div className="TodoEdit-buttonContainer">
+            <div className="TodoEdit__button">
                 <button
                     type="submit"
-                    className="TodoEdit-button TodoEdit-button--cancel"
+                    className="TodoEdit__cancel"
                     onClick={onCancel}>
                     Cancel
                 </button>
                 <button
                     type="submit"
-                    className="TodoEdit-button TodoEdit-button--update">
+                    className="TodoEdit__update">
                     Update
                 </button>
             </div>

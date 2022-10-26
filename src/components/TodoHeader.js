@@ -4,7 +4,7 @@ import '../styles/TodoHeader.css';
 function TodoHeader({ toggled }) {
     return (
         <div className="TodoHeader">
-            <p className={`TodoHeader--p ${toggled ? 'dark' : ''}`}>
+            <p className={`TodoHeader__p ${toggled ? 'dark' : ''}`}>
                 Your tasks
             </p>
         </div>

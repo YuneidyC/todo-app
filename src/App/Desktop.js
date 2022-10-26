@@ -33,26 +33,26 @@ function Desktop() {
     return (
         <React.Fragment>
             <main>
-                <section className="section--left">
-                    <div className="section--left-container">
+                <section className="section__left">
+                    <div className="section__left__container">
                         <TodoHeaderLeft />
                         <TodoFieldLeft />
                         <TodoImageLeft />
                     </div>
                 </section>
 
-                <section className="section--right">
+                <section className="section__right">
                     <Toggle toggled={toggled} onClick={handleClick} />
                     <TodoHeader toggled={toggled} />
                     <TodoCounter />
                     <TodoSearch />
                     <TodoList>
-                        <div className="TodoList--container">
+                        <div className="TodoList__container">
                             {error && <p>Error</p>}
                             {loading && (
-                                <div className="ring-loading">
+                                <div className="loading">
                                     Loading...
-                                    <span className="ring-loading__span"></span>
+                                    <span className="loading__span"></span>
                                 </div>
                             )}
                             {!loading && !searchedTodos.length && (

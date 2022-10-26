@@ -13,7 +13,7 @@ function CreateTodoButton({ openModal, setOpenModal, toggled }) {
 
         const onClickButton = () => {
             const spanButton = document.getElementsByClassName(
-                'CreateTodoButton--button__span'
+                'CreateTodoButton__button__span'
             )[0];
             // TodoForm click is received earlier than this so close logic is in there
             if (!openModal) {
@@ -38,8 +38,8 @@ function CreateTodoButton({ openModal, setOpenModal, toggled }) {
 
     return (
         <div className={`CreateTodoButton ${toggled ? 'dark' : ''} `}>
-            <button className="CreateTodoButton--button" ref={ref}>
-                <span className="CreateTodoButton--button__span">+</span>
+            <button className="CreateTodoButton__button" ref={ref}>
+                <span className="CreateTodoButton__span">+</span>
             </button>
         </div>
     );

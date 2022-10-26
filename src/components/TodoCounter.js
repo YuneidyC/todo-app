@@ -14,11 +14,11 @@ function TodoCounter() {
 
     return (
         <div className="TodoCounter">
-            <span className="TodoCounter--percentage">
+            <span className="TodoCounter__percentage">
                 {calculatePercentage()}%
             </span>
             <progress
-                className="TodoCounter--progressBar"
+                className="TodoCounter__progressBar"
                 value={calculatePercentage()}
                 max="100"></progress>
         </div>

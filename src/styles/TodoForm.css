@@ -10,7 +10,7 @@ form {
     border-radius: 8px;
 }
 
-.TodoForm-label {
+.TodoForm__label {
     text-align: center;
     font-weight: bold;
     font-size: var(--md);
@@ -41,7 +41,7 @@ textarea:focus {
     outline-color: var(--blue);
 }
 
-.TodoForm-buttonContainer {
+.TodoForm__button {
     margin-top: 14px;
     display: flex;
     justify-content: space-between;
@@ -49,28 +49,19 @@ textarea:focus {
     width: 100%;
 }
 
-.TodoForm-button {
-    cursor: pointer;
-    display: inline-block;
-    color: var(--dark-grey);
-    width: 120px;
-    height: 48px;
-    border-radius: 2px;
-    border: none;
-}
-
-.TodoForm-buttonContainer button {
+.TodoForm__button button {
     background-color: var(--blue);
     border-radius: 8px;
     width: 60px;
     height: 25px;
     border: transparent;
     font-size: var(--sm);
+    color: var(--dark-grey);
     cursor: pointer;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-.TodoForm-error {
+.TodoForm__error {
     color: red;
     font-size: var(--sm);
 }

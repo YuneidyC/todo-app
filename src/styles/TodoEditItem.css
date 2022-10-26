@@ -10,7 +10,7 @@ form {
     border-radius: 8px;
 }
 
-.TodoEdit-label {
+.TodoEdit__label {
     text-align: center;
     font-weight: bold;
     font-size: var(--md);
@@ -18,7 +18,7 @@ form {
     margin-bottom: 26px;
 }
 
-.TodoEdit-label textarea {
+.TodoEdit__label textarea {
     background-color: var(--just-white);
     border: 2px solid var(--dark-grey);
     border-radius: 8px;
@@ -31,17 +31,17 @@ form {
     resize: none;
 }
 
-.TodoEdit-label textarea::placeholder {
+.TodoEdit__label textarea::placeholder {
     font-size: var(--md);
     color: var(--light-grey);
     text-align: center;
 }
 
-.TodoEdit-label textarea:focus {
+.TodoEdit__label textarea:focus {
     outline-color: var(--blue);
 }
 
-.TodoEdit-buttonContainer {
+.TodoEdit__button {
     margin-top: 14px;
     display: flex;
     justify-content: space-between;
@@ -49,28 +49,19 @@ form {
     width: 100%;
 }
 
-.TodoEdit-button {
-    cursor: pointer;
-    display: inline-block;
-    color: var(--dark-grey);
-    width: 120px;
-    height: 48px;
-    border-radius: 2px;
-    border: none;
-}
-
-.TodoEdit-buttonContainer button {
+.TodoEdit__button button {
     background-color: var(--blue);
     border-radius: 8px;
     width: 60px;
     height: 25px;
     border: transparent;
+    color: var(--dark-grey);
     font-size: var(--sm);
     cursor: pointer;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-.TodoEdit-error {
+.TodoEdit__error {
     color: red;
     font-size: var(--sm);
 }

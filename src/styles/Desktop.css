@@ -21,8 +21,8 @@ main {
     position: relative;
 }
 
-.section--left,
-.section--right {
+.section__left,
+.section__right {
     width: 100%;
     height: auto;
     min-width: 400px;
@@ -30,26 +30,25 @@ main {
     align-self: center;
 }
 
-.section--right {
+.section__right {
     display: grid;
     grid-template-rows: 100px 35px 50px auto;
+    max-width: 450px;
     grid-template-columns: 1fr;
 }
 
-.section--right .Toggle-container {
+.section__right .Toggle__container {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     justify-self: end;
     align-self: center;
     margin-top: 0;
-    width: 30%;
+    width: 35px;
+    height: 17.5px;
+    margin: 25px;
 }
 
-.section--right .Toggle-container > .Toggle {
-    margin: 45px;
-}
-
-.section--right .TodoHeader {
+.section__right .TodoHeader {
     width: 70%;
     grid-row: 1 / 2;
     grid-column: 1 / 2;
@@ -57,25 +56,25 @@ main {
     align-self: center;
 }
 
-.section--right .TodoCounter {
+.section__right .TodoCounter {
     grid-row: 2 / 3;
     justify-self: center;
     align-self: start;
 }
 
-.section--right .TodoSearch {
+.section__right .TodoSearch {
     grid-row: 3 / 4;
     justify-self: center;
     align-self: center;
 }
 
-.section--right .TodoList {
+.section__right .TodoList {
     grid-row: 4 / 5;
     justify-self: center;
     align-self: center;
 }
 
-.section--left-container {
+.section__left__container {
     display: grid;
     width: 90%;
     grid-template-rows: 80px 60px 50px 532px;

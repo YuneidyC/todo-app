@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';
 import { TodoHeader } from '../components/TodoHeader';
@@ -35,12 +36,12 @@ function Mobile() {
             <TodoCounter />
             <TodoSearch />
             <TodoList>
-                <div className="TodoList--container">
+                <div className="TodoList__container">
                     {error && <p>Error</p>}
                     {loading && (
-                        <div className="ring-loading">
+                        <div className="loading">
                             Loading...
-                            <span className="ring-loading__span"></span>
+                            <span className="loading__span"></span>
                         </div>
                     )}
                     {!loading && !searchedTodos.length && (

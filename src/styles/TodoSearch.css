@@ -10,7 +10,7 @@
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-.TodoSearch-input {
+.TodoSearch__input {
     width: 100%;
     background-color: transparent;
     font-size: 1.8rem;
