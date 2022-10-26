@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { TodoContext } from '../TodoContext';
 import '../styles/TodoEditItem.css';
 
+import { toast } from 'react-toastify';
+
 function TodoEditItem() {
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const [errorInput, setErrorInput] = React.useState(false);
@@ -23,6 +25,7 @@ function TodoEditItem() {
             editTextTodo(newTodoValue);
             setOpenEditModal(false);
             setNewTodoValue('');
+            toast.success('Updated successfully')
         } else {
             setErrorInput(true);
         }

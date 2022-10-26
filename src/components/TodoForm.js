@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { TodoContext } from '../TodoContext';
 import '../styles/TodoForm.css';
 
+import { toast } from 'react-toastify';
+
 function TodoForm() {
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const [errorInput, setErrorInput] = React.useState(false);
@@ -37,6 +39,8 @@ function TodoForm() {
             changeRotateButton();
             setOpenModal(false);
             setNewTodoValue('');
+            toast.success('Added successfully');
+
         } else {
             setErrorInput(true);
         }

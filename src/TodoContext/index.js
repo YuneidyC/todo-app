@@ -44,6 +44,7 @@ function TodoProvider(props) {
         const todoIndex = todos.findIndex((todo) => todo.id === id);
         const newTodos = [...todos];
         newTodos.splice(todoIndex, 1);
+
         saveTodos(newTodos);
     };
 

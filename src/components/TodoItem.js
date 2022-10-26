@@ -1,7 +1,11 @@
 import React, { useId, useRef, useEffect } from 'react';
+
 import '../styles/TodoItem.css';
+
 import { BsFillTrashFill } from 'react-icons/bs';
 import { MdModeEdit } from 'react-icons/md';
+
+import { toast } from 'react-toastify';
 
 function TodoItem(props) {
     const trashIcon = { color: '#29aab3', fontSize: '20px' };
@@ -59,7 +63,7 @@ function TodoItem(props) {
             <BsFillTrashFill
                 className="trash-can"
                 style={trashIcon}
-                onClick={props.onDelete}
+                onClick={() => { props.onDelete(); toast.info('Removed'); }}
             />
         </li>
     );

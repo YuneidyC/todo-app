@@ -3,6 +3,8 @@ import '../styles/TodoFieldLeft.css';
 
 import { TodoContext } from '../TodoContext';
 
+import { toast } from 'react-toastify';
+
 function TodoFieldLeft() {
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const [errorInput, setErrorInput] = React.useState(false);
@@ -20,6 +22,7 @@ function TodoFieldLeft() {
         if (newTodoValue) {
             addTodo(newTodoValue);
             setNewTodoValue('');
+            toast.success('Added successfully');
         } else {
             setErrorInput(true);
         }

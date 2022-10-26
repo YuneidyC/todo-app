@@ -14,6 +14,9 @@ import { Modal } from '../components/Modal';
 import { Toggle } from '../components/Toggle';
 import { TodoEditItem } from '../components/TodoEditItem';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Mobile() {
     // prettier-ignore
     const {
@@ -89,6 +92,11 @@ function Mobile() {
                     toggled={toggled}
                 />
             </div>
+            <ToastContainer
+                closeOnClick
+                autoClose={3000}
+                className={'toast-message'}
+            />
         </React.Fragment>
     );
 }

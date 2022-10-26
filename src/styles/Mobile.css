@@ -44,3 +44,8 @@
 .TodoList {
     grid-row: 3 / 4;
 }
+
+.toast-message {
+    opacity: 0.7;
+    font-size: var(--sm);
+}

@@ -15,6 +15,9 @@ import { Toggle } from '../components/Toggle';
 import { Modal } from '../components/Modal';
 import { TodoEditItem } from '../components/TodoEditItem';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Desktop() {
     // prettier-ignore
     const {
@@ -81,6 +84,11 @@ function Desktop() {
                     )}
                 </section>
             </main>
+            <ToastContainer
+                closeOnClick
+                autoClose={3000}
+                className={'toast-message'}
+            />
         </React.Fragment>
     );
 }
