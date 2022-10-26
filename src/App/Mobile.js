@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/Mobile.css';
+
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';
 import { TodoHeader } from '../components/TodoHeader';
@@ -31,56 +33,62 @@ function Mobile() {
 
     return (
         <React.Fragment>
-            <Toggle toggled={toggled} onClick={handleClick} />
-            <TodoHeader toggled={toggled} />
-            <TodoCounter />
-            <TodoSearch />
-            <TodoList>
-                <div className="TodoList__container">
-                    {error && <p>Error</p>}
-                    {loading && (
-                        <div className="loading">
-                            Loading...
-                            <span className="loading__span"></span>
-                        </div>
-                    )}
-                    {!loading && !searchedTodos.length && (
-                        <p>Create your first TODO!</p>
-                    )}
+            <div>
+                <section className='header'>
+                    <Toggle toggled={toggled} onClick={handleClick} />
+                    <TodoHeader toggled={toggled} />
+                </section>
+                <section className='counterSearch'>
+                    <TodoCounter />
+                    <TodoSearch />
+                </section>
+                <TodoList>
+                    <div className="TodoList__container">
+                        {error && <p>Error</p>}
+                        {loading && (
+                            <div className="loading">
+                                Loading...
+                                <span className="loading__span"></span>
+                            </div>
+                        )}
+                        {!loading && !searchedTodos.length && (
+                            <p>Create your first TODO!</p>
+                        )}
 
-                    {searchedTodos.map((todo, index) => (
-                        <TodoItem
-                            key={index}
-                            id={todo.id}
-                            text={todo.text}
-                            completed={todo.completed}
-                            onDelete={() => deleteTodo(todo.id)}
-                            uncheck={() => checkOrUncheck(todo.id)}
-                            onEdit={() => onEdit(todo.id)}
-                            openEditModal={openEditModal}
-                            setOpenEditModal={setOpenEditModal}
-                        />
-                    ))}
-                </div>
-            </TodoList>
+                        {searchedTodos.map((todo, index) => (
+                            <TodoItem
+                                key={index}
+                                id={todo.id}
+                                text={todo.text}
+                                completed={todo.completed}
+                                onDelete={() => deleteTodo(todo.id)}
+                                uncheck={() => checkOrUncheck(todo.id)}
+                                onEdit={() => onEdit(todo.id)}
+                                openEditModal={openEditModal}
+                                setOpenEditModal={setOpenEditModal}
+                            />
+                        ))}
+                    </div>
+                </TodoList>
 
-            {openModal && (
-                <Modal>
-                    <TodoForm />
-                </Modal>
-            )}
+                {openModal && (
+                    <Modal>
+                        <TodoForm />
+                    </Modal>
+                )}
 
-            {openEditModal && (
-                <Modal>
-                    <TodoEditItem />
-                </Modal>
-            )}
+                {openEditModal && (
+                    <Modal>
+                        <TodoEditItem />
+                    </Modal>
+                )}
 
-            <CreateTodoButton
-                openModal={openModal}
-                setOpenModal={setOpenModal}
-                toggled={toggled}
-            />
+                <CreateTodoButton
+                    openModal={openModal}
+                    setOpenModal={setOpenModal}
+                    toggled={toggled}
+                />
+            </div>
         </React.Fragment>
     );
 }
