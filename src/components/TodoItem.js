@@ -36,9 +36,8 @@ function TodoItem(props) {
                 <input
                     type="checkbox"
                     id={id}
-                    className={`checklist-input ${
-                        props.completed && 'checklist--check'
-                    }`}
+                    className={`checklist-input ${props.completed && 'checklist--check'
+                        }`}
                 />
                 <label
                     htmlFor={id}
@@ -46,15 +45,13 @@ function TodoItem(props) {
                     onClick={props.uncheck}></label>
             </div>
             <p
-                className={`TodoItem-p ${
-                    props.completed && 'TodoItem-p--completed'
-                }`}>
+                className={`TodoItem-p ${props.completed && 'TodoItem-p--completed'
+                    }`}>
                 {props.text}
             </p>
             <button
-                className={`TodoItem-MdModeEdit ${
-                    props.completed && 'disable'
-                }`}
+                className={`TodoItem-MdModeEdit ${props.completed && 'disable'
+                    }`} aria-label="update-todo"
                 ref={ref}
                 disabled={props.completed}>
                 <MdModeEdit className="edit" style={editPencil} />
