@@ -3,7 +3,7 @@
     display: flex;
     position: relative;
     justify-content: center;
-    min-width: 400px;
+    min-width: 320px;
 }
 
 .TodoCounter__percentage {
@@ -13,8 +13,9 @@
     text-align: center;
     color: white;
     margin: 0 auto;
-    width: 400px;
-    font-weight: 500;
+    width: 100%;
+    font-weight: bold;
+    min-width: 320px;
 }
 
 progress::-moz-progress-bar,
@@ -27,7 +28,7 @@ progress::-webkit-progress-value {
 
 .TodoCounter__progressBar {
     height: 18px;
-    width: 400px;
+    width: 100%;
     min-width: 200px;
     background: darkgray;
     border-radius: 30px;

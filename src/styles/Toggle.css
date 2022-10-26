@@ -1,7 +1,7 @@
 .Toggle {
     grid-row: 1 / 2;
-    grid-column: 1 / 2;
-    justify-self: end;
+    grid-column: 2 / 3;
+    justify-self: center;
     align-self: center;
 }
 

@@ -33,15 +33,18 @@ main {
 .section__right {
     display: grid;
     grid-template-rows: 100px 35px 50px auto;
-    max-width: 450px;
     grid-template-columns: 1fr;
+    max-width: 500px;
 }
 
-.section__right .Toggle__container {
+.section__right .Toggle {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     justify-self: end;
     align-self: center;
+}
+
+.section__right .Toggle__container {
     margin-top: 0;
     width: 35px;
     height: 17.5px;
@@ -60,18 +63,21 @@ main {
     grid-row: 2 / 3;
     justify-self: center;
     align-self: start;
+    width: 70%;
 }
 
 .section__right .TodoSearch {
     grid-row: 3 / 4;
     justify-self: center;
     align-self: center;
+    width: 70%;
 }
 
 .section__right .TodoList {
     grid-row: 4 / 5;
     justify-self: center;
     align-self: center;
+    width: 70%;
 }
 
 .section__left__container {
