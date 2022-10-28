@@ -1,13 +1,20 @@
 .TodoCounter {
     padding: 10px 0 20px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     position: relative;
     justify-content: center;
+    align-items: center;
+    width: 350px;
     min-width: 320px;
+    margin: 0 auto;
 }
 
 .TodoCounter__percentage {
     position: absolute;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
     height: 18px;
     font-size: 1.2rem;
     text-align: center;
