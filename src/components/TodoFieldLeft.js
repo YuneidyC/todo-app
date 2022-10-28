@@ -21,8 +21,8 @@ function TodoFieldLeft() {
         event.preventDefault();
         if (newTodoValue) {
             addTodo(newTodoValue);
+            toast.success(`Task '${newTodoValue}' has been added successfully`);
             setNewTodoValue('');
-            toast.success('Added successfully');
         } else {
             setErrorInput(true);
         }

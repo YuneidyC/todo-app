@@ -38,8 +38,8 @@ function TodoForm() {
             addTodo(newTodoValue);
             changeRotateButton();
             setOpenModal(false);
+            toast.success(`Task '${newTodoValue}' has been added successfully`);
             setNewTodoValue('');
-            toast.success('Added successfully');
 
         } else {
             setErrorInput(true);

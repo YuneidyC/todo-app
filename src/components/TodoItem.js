@@ -63,7 +63,7 @@ function TodoItem(props) {
             <BsFillTrashFill
                 className="trash-can"
                 style={trashIcon}
-                onClick={() => { props.onDelete(); toast.info('Removed'); }}
+                onClick={() => { props.onDelete(); toast.info(`Task '${props.text}' has been removed`); }}
             />
         </li>
     );

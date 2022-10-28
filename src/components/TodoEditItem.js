@@ -24,8 +24,8 @@ function TodoEditItem() {
         if (newTodoValue) {
             editTextTodo(newTodoValue);
             setOpenEditModal(false);
+            toast.success(`Task '${updateText.text}' has been successfully updated to '${newTodoValue}'`)
             setNewTodoValue('');
-            toast.success('Updated successfully')
         } else {
             setErrorInput(true);
         }
