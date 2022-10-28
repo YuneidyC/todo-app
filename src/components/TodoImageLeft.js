@@ -5,7 +5,9 @@ import image from '../assets/images/remote-g277dac5f3_1280 2.png';
 
 function TodoImageLeft() {
     return (
-        <img className="TodoImageLeft" src={image} alt="People making tasks" />
+        <div className='TodoImageLeft'>
+            <img className="TodoImageLeft__img" src={image} alt="People making tasks" />
+        </div>
     );
 }
 
