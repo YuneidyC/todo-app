@@ -1,14 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import { TodoContext } from '../TodoContext';
 import '../styles/TodoForm.css';
 
 import { toast } from 'react-toastify';
 
-function TodoForm() {
+function TodoForm({ addTodo, openModal, setOpenModal }) {
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const [errorInput, setErrorInput] = React.useState(false);
-
-    const { addTodo, openModal, setOpenModal } = React.useContext(TodoContext);
 
     const onChange = (event) => {
         setNewTodoValue(event.target.value);

@@ -1,17 +1,13 @@
 import React, { useRef, useEffect } from 'react';
 import '../styles/TodoFieldLeft.css';
 
-import { TodoContext } from '../TodoContext';
-
 import { toast } from 'react-toastify';
 
-function TodoFieldLeft() {
+function TodoFieldLeft({ addTodo }) {
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const [errorInput, setErrorInput] = React.useState(false);
 
     const placeholder = 'Add a task';
-
-    const { addTodo } = React.useContext(TodoContext);
 
     const onChange = (event) => {
         setNewTodoValue(event.target.value);

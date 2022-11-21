@@ -1,15 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import { TodoContext } from '../TodoContext';
 import '../styles/TodoEditItem.css';
 
 import { toast } from 'react-toastify';
 
-function TodoEditItem() {
+function TodoEditItem({ openEditModal, setOpenEditModal, editTextTodo, updateText}) {
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const [errorInput, setErrorInput] = React.useState(false);
-
-    const { editTextTodo, openEditModal, setOpenEditModal, updateText } =
-        React.useContext(TodoContext);
 
     const onChange = (event) => {
         setNewTodoValue(event.target.value);

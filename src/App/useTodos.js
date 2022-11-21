@@ -3,9 +3,8 @@ import { v4 as uuid } from 'uuid';
 
 import { useLocalStorage } from './useLocalStorage';
 
-const TodoContext = React.createContext();
 
-function TodoProvider(props) {
+function useTodos() {
     // prettier-ignore
     const { item: todos, saveItem: saveTodos, loading, error } = useLocalStorage('TODOS_V1', []);
     const [searchValue, setSearchValue] = React.useState('');
@@ -81,16 +80,14 @@ function TodoProvider(props) {
         }
     };
 
-    return (
+    return {
         // prettier-ignore
-        <TodoContext.Provider value={{
             loading,
             error,
             totalTodos,
             completedTodos,
             searchValue,
             setSearchValue,
-            searchedTodos,
             addTodo,
             deleteTodo,
             checkOrUncheck,
@@ -103,11 +100,9 @@ function TodoProvider(props) {
             openEditModal,
             setOpenEditModal,
             editTextTodo,
-            updateText
-        }}>
-            {props.children}
-        </TodoContext.Provider>
-    );
+            updateText,
+            searchedTodos
+        }
 }
 
-export { TodoContext, TodoProvider };
+export { useTodos };
