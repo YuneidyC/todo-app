@@ -3,7 +3,6 @@ import { v4 as uuid } from 'uuid';
 
 import { useLocalStorage } from './useLocalStorage';
 
-
 function useTodos() {
     // prettier-ignore
     const { item: todos, saveItem: saveTodos, loading, error } = useLocalStorage('TODOS_V1', []);

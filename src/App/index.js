@@ -75,6 +75,7 @@ function AppUI() {
                             <TodoSearch
                                 searchValue={searchValue}
                                 setSearchValue={setSearchValue}
+                                loading={loading}
                             />
                         </section>
                         <TodoList>

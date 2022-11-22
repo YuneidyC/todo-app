@@ -22,3 +22,8 @@
     padding-left: 15px;
     color: var(--dark-grey);
 }
+
+.TodoSearch:disabled,
+.TodoSearch_input:disabled {
+    opacity: 50%;
+}
