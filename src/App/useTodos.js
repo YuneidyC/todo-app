@@ -5,9 +5,16 @@ import { useLocalStorage } from './useLocalStorage';
 
 function useTodos() {
     // prettier-ignore
-    const { item: todos, saveItem: saveTodos, loading, error } = useLocalStorage('TODOS_V1', []);
+    const {
+        item: todos,
+        saveItem: saveTodos,
+        sincronizeItems: sincronizeTodos,
+        loading,
+        error,
+    } = useLocalStorage('TODOS_V1', []);
     const [searchValue, setSearchValue] = React.useState('');
     const [updateText, setUpdateText] = React.useState('');
+    const [updateStorage, setUpdateStorage] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
     const [openEditModal, setOpenEditModal] = React.useState(false);
     const [toggled, setToggled] = React.useState(false);
@@ -100,7 +107,10 @@ function useTodos() {
             setOpenEditModal,
             editTextTodo,
             updateText,
-            searchedTodos
+            searchedTodos,
+            sincronizeTodos,
+            updateStorage,
+            setUpdateStorage
         }
 }
 

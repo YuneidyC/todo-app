@@ -18,6 +18,7 @@ import { TodoEditItem } from '../components/TodoEditItem';
 import { TodoHeaderLeft } from '../components/TodoHeaderLeft';
 import { TodoImageLeft } from '../components/TodoImageLeft';
 import { TodoFieldLeft } from '../components/TodoFieldLeft';
+import { ChangeAlertWithStorageListener } from '../components/ChangeAlert';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -25,8 +26,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../index.css';
 
 function AppUI() {
-        // prettier-ignore
-        const {
+    // prettier-ignore
+    const {
             error,
             loading,
             searchedTodos,
@@ -45,11 +46,14 @@ function AppUI() {
             setSearchValue,
             editTextTodo,
             updateText,
-            addTodo
+            addTodo,
+            sincronizeTodos,
+            updateStorage,
+            setUpdateStorage
         } = useTodos();
-        return (
-            // prettier-ignore
-            <React.Fragment>
+    return (
+        // prettier-ignore
+        <React.Fragment>
                 <main>
                     <MediaQuery minWidth={1000}>
                         <section className="section__left">
@@ -134,13 +138,18 @@ function AppUI() {
                         </Modal>
                     )}
                 </main>
+               <ChangeAlertWithStorageListener
+                    sincronize={sincronizeTodos}
+                    updateStorage={updateStorage}
+                    setUpdateStorage={setUpdateStorage}
+                />
                 <ToastContainer
                     closeOnClick
                     autoClose={3000}
                     className={'toast-message'}
                 />
             </React.Fragment >
-        );
+    );
 }
 
 export default AppUI;

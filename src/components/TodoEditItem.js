@@ -3,7 +3,7 @@ import '../styles/TodoEditItem.css';
 
 import { toast } from 'react-toastify';
 
-function TodoEditItem({ openEditModal, setOpenEditModal, editTextTodo, updateText}) {
+function TodoEditItem({ openEditModal, setOpenEditModal, editTextTodo, updateText }) {
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const [errorInput, setErrorInput] = React.useState(false);
 
@@ -20,7 +20,7 @@ function TodoEditItem({ openEditModal, setOpenEditModal, editTextTodo, updateTex
         if (newTodoValue) {
             editTextTodo(newTodoValue);
             setOpenEditModal(false);
-            toast.success(`Task '${updateText.text}' has been successfully updated to '${newTodoValue}'`)
+            toast.success(`Task '${event.target[0].placeholder}' has been successfully updated to '${newTodoValue}'`);
             setNewTodoValue('');
         } else {
             setErrorInput(true);
