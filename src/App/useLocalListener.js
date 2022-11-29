@@ -1,9 +1,9 @@
 import React from "react";
 
-function withStorageListener(WrappedComponent) {
+function useLocalListener({ sincronize, updateStorage, setUpdateStorage }) {
 
     function hasTaskChanged(oldChange, newChange) {
-        if(oldChange.id !== newChange.id) {
+        if (oldChange.id !== newChange.id) {
             return `The '${oldChange.text}' has been removed, please refresh`;
         }
         if (oldChange.text !== newChange.text) {
@@ -37,29 +37,25 @@ function withStorageListener(WrappedComponent) {
         }
     }
 
-    return function WrappedComponentWithStorageListener(props) {
-        const [storageChange, setStorageChange] = React.useState(false);
+    const [storageChange, setStorageChange] = React.useState(false);
 
-        window.addEventListener('storage', (change) => {
-            if(change.key === 'TODOS_V1') {
-                setStorageChange(true);
-                props.setUpdateStorage(getChangedTasks(change.oldValue, change.newValue));
-            }
-        });
-
-        const toggleShow = () => {
-            props.sincronize();
-            setStorageChange(false);
+    window.addEventListener('storage', (change) => {
+        if (change.key === 'TODOS_V1') {
+            setStorageChange(true);
+            setUpdateStorage(getChangedTasks(change.oldValue, change.newValue));
         }
+    });
 
-        return (
-            <WrappedComponent
-                show={storageChange}
-                toggleShow={toggleShow}
-                updateStorage={props.updateStorage}
-            />
-        )
+    const toggleShow = () => {
+        sincronize();
+        setStorageChange(false);
     }
+
+    return {
+        show: storageChange,
+        toggleShow,
+        updateStorage: updateStorage
+    };
 }
 
-export { withStorageListener };
+export { useLocalListener };

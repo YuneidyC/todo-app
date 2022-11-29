@@ -1,23 +1,24 @@
 import React from "react";
 import { toast } from "react-toastify";
-import { withStorageListener } from "../App/withStorageListener";
+import { useLocalListener } from "../App/useLocalListener";
 
 const notify = (message, toggleShow) => {
     toast.info(message, {
-        autoClose:false,
-        onClose:toggleShow
+        autoClose: false,
+        onClose: toggleShow
     });
 }
 
-function ChangeAlert({ show, toggleShow, updateStorage }) {
+function ChangeAlert({ sincronize, updateStorage, setUpdateStorage }) {
+    const { show, toggleShow } = useLocalListener({ sincronize, updateStorage, setUpdateStorage });
     if (show) {
         return (
-            <div className="ChangeAlert" onClick={notify(updateStorage, toggleShow)}>
+            <div
+                className="ChangeAlert"
+                onClick={notify(updateStorage, toggleShow)}>
             </div>
         )
     }
 }
 
-const ChangeAlertWithStorageListener = withStorageListener(ChangeAlert);
-
-export { ChangeAlertWithStorageListener };
+export { ChangeAlert };
