@@ -18,7 +18,7 @@ import { TodoEditItem } from '../components/TodoEditItem';
 import { TodoHeaderLeft } from '../components/TodoHeaderLeft';
 import { TodoImageLeft } from '../components/TodoImageLeft';
 import { TodoFieldLeft } from '../components/TodoFieldLeft';
-import { ChangeAlert, ChangeAlertWithStorageListener } from '../components/ChangeAlert';
+import { ChangeAlert } from '../components/ChangeAlert';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
