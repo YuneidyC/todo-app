@@ -101,32 +101,31 @@ body.dark {
 
     .section__right {
         display: grid;
-        grid-template-rows: 100px 35px 50px auto;
+        grid-template-rows: 100px 90px auto;
         grid-template-columns: 1fr;
         max-width: 500px;
         justify-content: center;
         align-items: center;
     }
 
-    .section__right .TodoCounter {
+    .section__right .TodoCounter,
+    .section__right .TodoSearch,
+    .section__right .TodoList {
         grid-row: 2 / 3;
         justify-self: center;
         align-self: center;
         width: 70%;
     }
 
-    .section__right .TodoSearch {
-        grid-row: 3 / 4;
+    /* .section__right .TodoSearch {
+        grid-row: 2 / 3;
         justify-self: center;
         align-self: center;
         width: 70%;
-    }
+    } */
 
     .section__right .TodoList {
         grid-row: 4 / 5;
-        justify-self: center;
-        align-self: center;
-        width: 70%;
     }
 
     .section__left__container {
