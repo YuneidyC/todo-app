@@ -28,127 +28,126 @@ import '../index.css';
 function AppUI() {
     // prettier-ignore
     const {
-            error,
-            loading,
-            searchedTodos,
-            deleteTodo,
-            openModal,
-            setOpenModal,
-            checkOrUncheck,
-            toggled,
-            handleClick,
-            onEdit,
-            openEditModal,
-            setOpenEditModal,
-            totalTodos,
-            completedTodos,
-            searchValue,
-            setSearchValue,
-            editTextTodo,
-            updateText,
-            addTodo,
-            sincronizeTodos,
-            updateStorage,
-            setUpdateStorage
-        } = useTodos();
+        error,
+        loading,
+        searchedTodos,
+        deleteTodo,
+        openModal,
+        setOpenModal,
+        checkOrUncheck,
+        toggled,
+        handleClick,
+        onEdit,
+        openEditModal,
+        setOpenEditModal,
+        totalTodos,
+        completedTodos,
+        searchValue,
+        setSearchValue,
+        editTextTodo,
+        updateText,
+        addTodo,
+        sincronizeTodos,
+        updateStorage,
+        setUpdateStorage
+    } = useTodos();
     return (
         // prettier-ignore
         <React.Fragment>
-                <main>
-                    <MediaQuery minWidth={1000}>
-                        <section className="section__left">
-                            <div className="section__left__container">
-                                <TodoHeaderLeft />
-                                <TodoFieldLeft
-                                    addTodo={addTodo}
-                                />
-                                <TodoImageLeft />
-                            </div>
-                        </section>
-                    </MediaQuery>
-                    <section className="section__right">
-                        <section className='header'>
-                            <Toggle toggled={toggled} onClick={handleClick} />
-                            <TodoHeader toggled={toggled} />
-                        </section>
-                        <section className='counterSearch'>
-                            <TodoCounter
-                                totalTodos={totalTodos}
-                                completedTodos={completedTodos}
+            <main>
+                <MediaQuery minWidth={1000}>
+                    <section className="section__left">
+                        <div className="section__left__container">
+                            <TodoHeaderLeft />
+                            <TodoFieldLeft
+                                addTodo={addTodo}
                             />
-                            <TodoSearch
-                                searchValue={searchValue}
-                                setSearchValue={setSearchValue}
-                                loading={loading}
-                            />
-                        </section>
-                        <TodoList>
-                            <div className="TodoList__container">
-                                {error && <p>Error</p>}
-                                {loading && (
-                                    <div className="loading">
-                                        Loading...
-                                        <span className="loading__span"></span>
-                                    </div>
-                                )}
-                                {!loading && !searchedTodos.length && (
-                                    <p>Create your first TODO!</p>
-                                )}
-    
-                                {searchedTodos.map((todo, index) => (
-                                    <TodoItem
-                                        key={index}
-                                        id={todo.id}
-                                        text={todo.text}
-                                        completed={todo.completed}
-                                        onDelete={() => deleteTodo(todo.id)}
-                                        uncheck={() => checkOrUncheck(todo.id)}
-                                        onEdit={() => onEdit(todo.id)}
-                                        openEditModal={openEditModal}
-                                        setOpenEditModal={setOpenEditModal}
-                                    />
-                                ))}
-                            </div>
-                        </TodoList>
+                            <TodoImageLeft />
+                        </div>
                     </section>
-                    <MediaQuery maxWidth={999}>
-                        {openModal && (
-                            <Modal>
-                                <TodoForm
-                                    addTodo={addTodo}
-                                    openModal={openModal}
-                                    setOpenModal={setOpenModal}
-                                />
-                            </Modal>
-                        )}
-                        <CreateTodoButton
-                            openModal={openModal}
-                            setOpenModal={setOpenModal}
-                            toggled={toggled}
+                </MediaQuery>
+                <section className="section__right">
+                    <section className='header'>
+                        <Toggle toggled={toggled} onClick={handleClick} />
+                        <TodoHeader toggled={toggled} />
+                    </section>
+                    <section className='counterSearch'>
+                        <TodoCounter
+                            totalTodos={totalTodos}
+                            completedTodos={completedTodos}
                         />
-                    </MediaQuery>
-                    {openEditModal && (
+                        <TodoSearch
+                            searchValue={searchValue}
+                            setSearchValue={setSearchValue}
+                            loading={loading}
+                        />
+                    </section>
+                    <TodoList>
+                        <div className="TodoList__container">
+                            {error && <p>Error</p>}
+                            {loading && (
+                                <div className="loading">
+                                    Loading...
+                                    <span className="loading__span"></span>
+                                </div>
+                            )}
+                            {!loading && !searchedTodos.length && (
+                                <p>Create your first TODO!</p>
+                            )}
+                            {!loading && searchedTodos.map((todo, index) => (
+                                <TodoItem
+                                    key={index}
+                                    id={todo.id}
+                                    text={todo.text}
+                                    completed={todo.completed}
+                                    onDelete={() => deleteTodo(todo.id)}
+                                    uncheck={() => checkOrUncheck(todo.id)}
+                                    onEdit={() => onEdit(todo.id)}
+                                    openEditModal={openEditModal}
+                                    setOpenEditModal={setOpenEditModal}
+                                />
+                            ))}
+                        </div>
+                    </TodoList>
+                </section>
+                <MediaQuery maxWidth={999}>
+                    {openModal && (
                         <Modal>
-                            <TodoEditItem
-                                editTextTodo={editTextTodo}
-                                openEditModal={openEditModal}
-                                setOpenEditModal={setOpenEditModal}
-                                updateText={updateText}
+                            <TodoForm
+                                addTodo={addTodo}
+                                openModal={openModal}
+                                setOpenModal={setOpenModal}
                             />
                         </Modal>
                     )}
-                </main>
-               <ChangeAlert
-                    sincronize={sincronizeTodos}
-                    updateStorage={updateStorage}
-                    setUpdateStorage={setUpdateStorage}
-                />
-                <ToastContainer
-                    closeOnClick
-                    autoClose={3000}
-                    className={'toast-message'}
-                />
-            </React.Fragment >
+                    <CreateTodoButton
+                        openModal={openModal}
+                        setOpenModal={setOpenModal}
+                        toggled={toggled}
+                    />
+                </MediaQuery>
+                {openEditModal && (
+                    <Modal>
+                        <TodoEditItem
+                            editTextTodo={editTextTodo}
+                            openEditModal={openEditModal}
+                            setOpenEditModal={setOpenEditModal}
+                            updateText={updateText}
+                        />
+                    </Modal>
+                )}
+            </main>
+            <ChangeAlert
+                sincronize={sincronizeTodos}
+                updateStorage={updateStorage}
+                setUpdateStorage={setUpdateStorage}
+            />
+            <ToastContainer
+                closeOnClick
+                autoClose={3000}
+                className={'toast-message'}
+            />
+        </React.Fragment >
     );
 }
 
