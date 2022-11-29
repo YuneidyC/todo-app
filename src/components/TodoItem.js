@@ -34,6 +34,14 @@ function TodoItem(props) {
         };
     }, [props.openEditModal, props.setOpenEditModal, props]);
 
+    function checkOrUncheckToast() {
+        if (!props.completed) {
+            toast.success(`Task '${props.text}' has been completed`);
+        } else {
+            toast.success(`Task '${props.text}' has been unchecked`);
+        }
+    }
+
     return (
         <li className={`${props.completed && 'checklist--check'}`}>
             <div className="checklist">
@@ -46,7 +54,7 @@ function TodoItem(props) {
                 <label
                     htmlFor={id}
                     className={`${props.completed && 'checklist--check'}`}
-                    onClick={props.uncheck}></label>
+                    onClick={() => { props.uncheck(); checkOrUncheckToast() }}></label>
             </div>
             <p
                 className={`TodoItem-p ${props.completed && 'TodoItem-p--completed'
