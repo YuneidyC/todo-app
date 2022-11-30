@@ -35,3 +35,10 @@
     background-color: var(--yellow);
     transform: translate(16px, 0);
 }
+
+@media (max-width: 584px) {
+    .Toggle {
+        justify-self: start;
+        padding-left: 10px;
+    }
+}

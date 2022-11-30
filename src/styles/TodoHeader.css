@@ -28,3 +28,10 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@media (max-width: 584px) {
+    .TodoHeader {
+        justify-self: center;
+        padding-right: 16px;
+    }
+}

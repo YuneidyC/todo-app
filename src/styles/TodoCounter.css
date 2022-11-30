@@ -42,3 +42,10 @@ progress::-webkit-progress-value {
     border: none;
     margin: 0 auto;
 }
+
+@media (max-width: 584px) {
+    .TodoCounter {
+        max-width: 320px;
+        margin: 0;
+    }
+}

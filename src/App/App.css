@@ -89,7 +89,6 @@ body.dark {
         display: flex;
         justify-content: center;
         align-items: center;
-        /* position: relative; */
     }
 
     .section__left,
@@ -119,13 +118,6 @@ body.dark {
         width: 70%;
     }
 
-    /* .section__right .TodoSearch {
-        grid-row: 2 / 3;
-        justify-self: center;
-        align-self: center;
-        width: 70%;
-    } */
-
     .section__right .TodoList {
         grid-row: 4 / 5;
     }
@@ -141,5 +133,15 @@ body.dark {
         background-color: rgba(255, 255, 255, 0.5);
         box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
         border-radius: 10px;
+    }
+}
+
+@media (max-width: 584px) {
+    main {
+        position: relative;
+    }
+
+    .header {
+        grid-template-columns: 270px 53px;
     }
 }

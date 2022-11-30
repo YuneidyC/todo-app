@@ -42,3 +42,20 @@
 .CreateTodoButton.dark {
     background-color: var(--yellow);
 }
+
+@media (max-width: 584px) {
+    .CreateTodoButton {
+        display: inline-block;
+        position: absolute;
+        top: 28px;
+        left: 10px;
+        background-color: var(--yellow);
+        height: 50px;
+        width: 50px;
+        z-index: 0;
+    }
+
+    .CreateTodoButton.dark {
+        background-color: var(--blue);
+    }
+}
