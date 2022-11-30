@@ -26,13 +26,16 @@ body {
     background: linear-gradient(132deg, var(--blue) 8%, var(--yellow) 62%);
     margin: 0;
     width: 100%;
+    min-height: 100vh;
     height: calc(100vh - calc(100vh - 100%));
     display: grid;
     place-items: center;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
+
     background-repeat: no-repeat;
     background-size: contain;
+    background-attachment: fixed;
 }
 
 body.dark {
