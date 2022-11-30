@@ -146,5 +146,6 @@ body.dark {
 
     .header {
         grid-template-columns: 270px 53px;
+        max-width: 320px;
     }
 }
