@@ -3,18 +3,10 @@ import React from "react";
 function useLocalListener({ sincronize, updateStorage, setUpdateStorage }) {
 
     function hasTaskChanged(oldChange, newChange) {
-        if (oldChange.id !== newChange.id) {
-            return `The '${oldChange.text}' has been removed, please refresh`;
-        }
-        if (oldChange.text !== newChange.text) {
-            return `The task '${oldChange.text}' has been modified by ${newChange.text}, please refresh`;
-        }
-        if (oldChange.completed !== newChange.completed) {
-            if (newChange.completed === true) {
-                return `The task '${oldChange.text}' has been completed, please refresh`;
-            } else {
-                return `The task '${oldChange.text}' has been moved to pending, please refresh`;
-            }
+        if (oldChange.id !== newChange.id ||
+            oldChange.text !== newChange.text ||
+            oldChange.completed !== newChange.completed) {
+            return `There are changes, please click this notification to reload`;
         }
     }
 

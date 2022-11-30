@@ -2,10 +2,15 @@ import React from "react";
 import { toast } from "react-toastify";
 import { useLocalListener } from "../App/useLocalListener";
 
+import '../styles/ChangeAlert.css';
+
 const notify = (message, toggleShow) => {
     toast.info(message, {
         autoClose: false,
-        onClose: toggleShow
+        onClose: toggleShow,
+        toastId: 'toastRefresh',
+        className: 'toast-refresh',
+        position: toast.POSITION.TOP_CENTER
     });
 }
 
