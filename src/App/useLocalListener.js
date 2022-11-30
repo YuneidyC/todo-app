@@ -2,12 +2,12 @@ import React from 'react';
 
 function useLocalListener({ sincronize, updateStorage, setUpdateStorage }) {
     function hasTaskChanged(oldChange, newChange) {
-        if (
-            oldChange.id !== newChange.id ||
-            oldChange.text !== newChange.text ||
-            oldChange.completed !== newChange.completed
-        ) {
-            return `There are changes, please click this notification to reload`;
+        if (newChange !== undefined) {
+            if (oldChange.id !== newChange.id ||
+                oldChange.text !== newChange.text ||
+                oldChange.completed !== newChange.completed) {
+                return `There are changes, please click this notification to reload`;
+            }
         }
     }
 
