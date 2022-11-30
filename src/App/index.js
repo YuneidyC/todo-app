@@ -23,8 +23,6 @@ import { ChangeAlert } from '../components/ChangeAlert';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import '../index.css';
-
 function AppUI() {
     // prettier-ignore
     const {
