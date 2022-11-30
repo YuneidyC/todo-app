@@ -80,6 +80,8 @@ body.dark {
 .toast-message {
     opacity: 0.6;
     font-size: var(--sm);
+    color: black;
+    font-weight: 700;
 }
 
 @media (min-width: 1000px) {
