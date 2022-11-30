@@ -43,7 +43,7 @@
     background-color: var(--yellow);
 }
 
-@media (max-width: 584px) {
+@media (max-width: 584px) and (max-height: 741px) {
     .CreateTodoButton {
         display: inline-block;
         position: absolute;
