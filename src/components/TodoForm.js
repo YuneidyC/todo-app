@@ -37,7 +37,6 @@ function TodoForm({ addTodo, openModal, setOpenModal }) {
             setOpenModal(false);
             toast.success(`Task '${newTodoValue}' has been added successfully`);
             setNewTodoValue('');
-
         } else {
             setErrorInput(true);
         }
@@ -83,9 +82,7 @@ function TodoForm({ addTodo, openModal, setOpenModal }) {
                     onClick={onCancel}>
                     Cancel
                 </button>
-                <button
-                    type="submit"
-                    className="TodoForm__add">
+                <button type="submit" className="TodoForm__add">
                     Add
                 </button>
             </div>

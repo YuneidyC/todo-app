@@ -3,6 +3,7 @@ import '../styles/TodoEditItem.css';
 
 import { toast } from 'react-toastify';
 
+// prettier-ignore
 function TodoEditItem({ openEditModal, setOpenEditModal, editTextTodo, updateText }) {
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const [errorInput, setErrorInput] = React.useState(false);
@@ -20,7 +21,9 @@ function TodoEditItem({ openEditModal, setOpenEditModal, editTextTodo, updateTex
         if (newTodoValue) {
             editTextTodo(newTodoValue);
             setOpenEditModal(false);
-            toast.success(`Task '${event.target[0].placeholder}' has been successfully updated to '${newTodoValue}'`);
+            toast.success(
+                `Task '${event.target[0].placeholder}' has been successfully updated to '${newTodoValue}'`
+            );
             setNewTodoValue('');
         } else {
             setErrorInput(true);
@@ -67,9 +70,7 @@ function TodoEditItem({ openEditModal, setOpenEditModal, editTextTodo, updateTex
                     onClick={onCancel}>
                     Cancel
                 </button>
-                <button
-                    type="submit"
-                    className="TodoEdit__update">
+                <button type="submit" className="TodoEdit__update">
                     Update
                 </button>
             </div>

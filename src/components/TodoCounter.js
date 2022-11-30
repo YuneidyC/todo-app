@@ -1,8 +1,7 @@
 import React from 'react';
 import '../styles/TodoCounter.css';
 
-function TodoCounter({ totalTodos, completedTodos}) {
-
+function TodoCounter({ totalTodos, completedTodos }) {
     function calculatePercentage() {
         if (totalTodos === 0) {
             return totalTodos.toFixed(2);

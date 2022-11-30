@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 import './App.css';
 
 import MediaQuery from 'react-responsive';
 
-import { useTodos } from "./useTodos";
+import { useTodos } from './useTodos';
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';
 import { TodoHeader } from '../components/TodoHeader';

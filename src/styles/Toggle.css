@@ -31,7 +31,7 @@
     border: none;
 }
 
-.dark>.circle {
+.dark > .circle {
     background-color: var(--yellow);
     transform: translate(16px, 0);
 }

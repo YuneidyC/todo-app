@@ -48,22 +48,29 @@ function TodoItem(props) {
                 <input
                     type="checkbox"
                     id={id}
-                    className={`checklist-input ${props.completed && 'checklist--check'
-                        }`}
+                    className={`checklist-input ${
+                        props.completed && 'checklist--check'
+                    }`}
                 />
                 <label
                     htmlFor={id}
                     className={`${props.completed && 'checklist--check'}`}
-                    onClick={() => { props.uncheck(); checkOrUncheckToast() }}></label>
+                    onClick={() => {
+                        props.uncheck();
+                        checkOrUncheckToast();
+                    }}></label>
             </div>
             <p
-                className={`TodoItem-p ${props.completed && 'TodoItem-p--completed'
-                    }`}>
+                className={`TodoItem-p ${
+                    props.completed && 'TodoItem-p--completed'
+                }`}>
                 {props.text}
             </p>
             <button
-                className={`TodoItem-MdModeEdit ${props.completed && 'disable'
-                    }`} aria-label="update-todo"
+                className={`TodoItem-MdModeEdit ${
+                    props.completed && 'disable'
+                }`}
+                aria-label="update-todo"
                 ref={ref}
                 disabled={props.completed}>
                 <MdModeEdit className="edit" style={editPencil} />
@@ -71,7 +78,10 @@ function TodoItem(props) {
             <BsFillTrashFill
                 className="trash-can"
                 style={trashIcon}
-                onClick={() => { props.onDelete(); toast.info(`Task '${props.text}' has been removed`); }}
+                onClick={() => {
+                    props.onDelete();
+                    toast.info(`Task '${props.text}' has been removed`);
+                }}
             />
         </li>
     );

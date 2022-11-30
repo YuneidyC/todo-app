@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react';
 
 function useLocalListener({ sincronize, updateStorage, setUpdateStorage }) {
-
     function hasTaskChanged(oldChange, newChange) {
-        if (oldChange.id !== newChange.id ||
+        if (
+            oldChange.id !== newChange.id ||
             oldChange.text !== newChange.text ||
-            oldChange.completed !== newChange.completed) {
+            oldChange.completed !== newChange.completed
+        ) {
             return `There are changes, please click this notification to reload`;
         }
     }
@@ -17,7 +18,9 @@ function useLocalListener({ sincronize, updateStorage, setUpdateStorage }) {
         let j = 0;
 
         if (newChange.length > oldChange.length) {
-            return `The task '${newChange[newChange.length - 1].text}' has been added, please refresh`;
+            return `The task '${
+                newChange[newChange.length - 1].text
+            }' has been added, please refresh`;
         }
 
         for (let i = 0; i < oldChange.length; i++) {
@@ -41,12 +44,12 @@ function useLocalListener({ sincronize, updateStorage, setUpdateStorage }) {
     const toggleShow = () => {
         sincronize();
         setStorageChange(false);
-    }
+    };
 
     return {
         show: storageChange,
         toggleShow,
-        updateStorage: updateStorage
+        updateStorage: updateStorage,
     };
 }
 

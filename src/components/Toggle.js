@@ -7,7 +7,12 @@ function Toggle({ toggled, onClick }) {
             <div
                 className={`Toggle__container ${toggled ? 'dark' : ''}`}
                 onClick={onClick}>
-                <button className="circle" aria-label={`${toggled ? 'darkMode' : 'lightMode'}`}></button>
+                <button
+                    className="circle"
+                    aria-label={`${
+                        toggled ? 'darkMode' : 'lightMode'
+                    }`}>
+                </button>
             </div>
         </div>
     );
