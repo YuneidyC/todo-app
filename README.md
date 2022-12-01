@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# **ToDo's app**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [**ToDo's app**](#todos-app)
+  - [About the project](#about-the-project)
+  - [Tech stack](#tech-stack)
+  - [Getting started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Testing locally](#testing-locally)
+  - [Test it out](#test-it-out)
 
-## Available Scripts
+## About the project
 
-In the project directory, you can run:
+---
 
-### `npm start`
+This project was developed during this courses:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [**React introduction**](https://platzi.com/cursos/react/)
+- [**React render and compositing patterns**](https://platzi.com/cursos/react-patrones-render/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+I have made these improvements on top of the Platzi courses' contents
 
-### `npm test`
+- Toast notifications
+- Desktop layout
+- Small mobile layout
+- Dark mode
+- Uncheck tasks
+- Update task's text
+- Input validation
+- Progress bar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech stack
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- markdownlint-disable MD033 -->
+<p>
+    <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" >
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Html5" width="40" height="40" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" >
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="Css3" width="40" height="40" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/javascript" >
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40" />
+    </a>
+    <a href="https://reactjs.org/" >
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40" />
+    </a>
+</p>
+<!-- markdownlint-enable MD033 -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+|               | Version       | Installation |
+| ------------- | ------------- | ------------- |
+| npm           | 8.19.2+       | `npm install npm@latest -g`  |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Testing locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone git@github.com:YuneidyC/todo-app.git # Clone the repo
+npm install # Install NPM packages
+npm run start # Run the app
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Test it out
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can test this here.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Adding task
 
-### Code Splitting
+    ![adding](./docs/img/add-task.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Updating task
 
-### Analyzing the Bundle Size
+    ![updating](./docs/img/update-task.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Removing task
 
-### Making a Progressive Web App
+    ![removing](./docs/img/remove-task.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Completing tasks
 
-### Advanced Configuration
+    ![completing](./docs/img/completing-task.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Search
 
-### Deployment
+    ![Searching](./docs/img/search-task.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Dark mode
 
-### `npm run build` fails to minify
+    ![dark-mode](./docs/img/dark-mode.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Tablet / big mobile
+
+    ![big mobile](./docs/img/mobile-add-task.gif)
+
+- Small mobile
+
+    ![small mobile](./docs/img/small-mobile-add-task.gif)
+
+- Local listener
+
+    ![local listener](./docs/img/localListener-task.gif)
