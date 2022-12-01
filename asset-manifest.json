@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/todo-app/static/css/main.e71f43aa.css",
+    "main.js": "/todo-app/static/js/main.68094f95.js",
+    "static/media/remote-g277dac5f3_1280 2.png": "/todo-app/static/media/remote-g277dac5f3_1280 2.bf01e49612150f0a0d23.png",
+    "index.html": "/todo-app/index.html",
+    "main.e71f43aa.css.map": "/todo-app/static/css/main.e71f43aa.css.map",
+    "main.68094f95.js.map": "/todo-app/static/js/main.68094f95.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e71f43aa.css",
+    "static/js/main.68094f95.js"
+  ]
+}
