@@ -20,7 +20,7 @@ function useLocalListener({ sincronize, updateStorage, setUpdateStorage }) {
         if (newChange.length > oldChange.length) {
             return `The task '${
                 newChange[newChange.length - 1].text
-            }' has been added, please refresh`;
+            }' has been added, please click this notification to reload`;
         }
 
         for (let i = 0; i < oldChange.length; i++) {
