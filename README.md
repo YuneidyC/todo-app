@@ -71,7 +71,7 @@ npm run start # Run the app
 
 ---
 
-You can test this here.
+You can test this [here](https://yuneidyc.github.io/todo-app/).
 
 - Adding task
 
