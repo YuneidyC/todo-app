@@ -1,17 +1,15 @@
-# **ToDo's app**
+# ToDo's app
 
 - [**ToDo's app**](#todos-app)
-  - [About the project](#about-the-project)
-  - [Tech stack](#tech-stack)
-  - [Lighthouse](#lighthouse)
-  - [Getting started](#getting-started)
+  - [**About the project**](#about-the-project)
+  - [**Tech stack**](#tech-stack)
+  - [**Lighthouse**](#lighthouse)
+  - [**Getting started**](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Testing locally](#testing-locally)
-  - [Test it out](#test-it-out)
+  - [**Test it out**](#test-it-out)
 
 ## About the project
-
----
 
 This project was developed during this courses:
 
@@ -30,8 +28,6 @@ I have made these improvements on top of the Platzi courses' contents
 - Progress bar
 
 ## Tech stack
-
----
 
 <!-- markdownlint-disable MD033 -->
 <p>
@@ -52,13 +48,9 @@ I have made these improvements on top of the Platzi courses' contents
 
 ## Lighthouse
 
----
-
 <img src="lighthouse_results/desktop/pagespeed.svg" alt="Lighthouse report" width=800 />
 
 ## Getting started
-
----
 
 ### Prerequisites
 
@@ -75,8 +67,6 @@ npm run start # Run the app
 ```
 
 ## Test it out
-
----
 
 You can test this [here](https://yuneidyc.github.io/todo-app/).
 
