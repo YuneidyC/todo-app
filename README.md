@@ -3,6 +3,7 @@
 - [**ToDo's app**](#todos-app)
   - [About the project](#about-the-project)
   - [Tech stack](#tech-stack)
+  - [Lighthouse](#lighthouse)
   - [Getting started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Testing locally](#testing-locally)
@@ -48,6 +49,12 @@ I have made these improvements on top of the Platzi courses' contents
     </a>
 </p>
 <!-- markdownlint-enable MD033 -->
+
+## Lighthouse
+
+---
+
+<img src="lighthouse_results/desktop/pagespeed.svg" alt="Lighthouse report" width=800 />
 
 ## Getting started
 
