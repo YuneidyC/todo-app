@@ -11,6 +11,9 @@
 # production
 /build
 
+# Lighthouse report
+/lighthouse_results/**/*.html
+
 # misc
 .DS_Store
 .env.local
